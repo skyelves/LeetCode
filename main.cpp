@@ -4,8 +4,9 @@
 #include "1021_removeOutermostParentheses.h"
 #include "2166_designBitset.h"
 #include "316removeDuplicateLetters.h"
+#include "2030_smallestK-LengthSubsequenceWithOccurrencesofaLetter.h"
 
-solution *sol = new RemoveDuplicateLetters;
+solution *sol = new SmallestSubsequence;
 
 int main() {
     sol->check();
