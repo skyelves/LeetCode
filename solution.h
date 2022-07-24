@@ -13,6 +13,7 @@
 #include <stack>
 #include <set>
 #include <queue>
+#include <algorithm>
 #include <iostream>
 
 using namespace std;

@@ -5,8 +5,9 @@
 #include "2166_designBitset.h"
 #include "316removeDuplicateLetters.h"
 #include "2030_smallestK-LengthSubsequenceWithOccurrencesofaLetter.h"
+#include "2354_numberOfExcellentPairs.h"
 
-solution *sol = new SmallestSubsequence;
+solution *sol = new CountExcellentPairs;
 
 int main() {
     sol->check();
