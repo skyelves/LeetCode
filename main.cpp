@@ -6,6 +6,7 @@
 #include "316removeDuplicateLetters.h"
 #include "2030_smallestK-LengthSubsequenceWithOccurrencesofaLetter.h"
 #include "2354_numberOfExcellentPairs.h"
+#include "2353_designAFoodRatingSystem.h"
 
 solution *sol = new CountExcellentPairs;
 
