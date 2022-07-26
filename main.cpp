@@ -13,8 +13,9 @@
 #include "2262_appealSum.h"
 #include "2248_intersection.h"
 #include "2249_countLatticePoints.h"
+#include "2250_countRectangles.h"
 
-solution *sol = new CountLatticePoints;
+solution *sol = new CountRectangles;
 
 int main() {
     sol->check();
