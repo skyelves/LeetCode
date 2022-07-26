@@ -11,8 +11,9 @@
 #include "2260_minimumCardPickup.h"
 #include "2261_countDistinct.h"
 #include "2262_appealSum.h"
+#include "2248_intersection.h"
 
-solution *sol = new AppealSum;
+solution *sol = new Intersection;
 
 int main() {
     sol->check();
