@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_removeOutermostParentheses.h 2166_designBitset.h
         316removeDuplicateLetters.h 2030_smallestK-LengthSubsequenceWithOccurrencesofaLetter.h 2354_numberOfExcellentPairs.h
-        2353_designAFoodRatingSystem.h 2259_removeDigitFromNumbertoMaximizeResult.h 2260_minimumCardPickup.h 2262_appealSum.h)
+        2353_designAFoodRatingSystem.h 2259_removeDigitFromNumbertoMaximizeResult.h 2260_minimumCardPickup.h 2261_countDistinct.h 2262_appealSum.h)
