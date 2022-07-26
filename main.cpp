@@ -12,8 +12,9 @@
 #include "2261_countDistinct.h"
 #include "2262_appealSum.h"
 #include "2248_intersection.h"
+#include "2249_countLatticePoints.h"
 
-solution *sol = new Intersection;
+solution *sol = new CountLatticePoints;
 
 int main() {
     sol->check();
