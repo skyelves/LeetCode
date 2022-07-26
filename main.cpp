@@ -7,8 +7,11 @@
 #include "2030_smallestK-LengthSubsequenceWithOccurrencesofaLetter.h"
 #include "2354_numberOfExcellentPairs.h"
 #include "2353_designAFoodRatingSystem.h"
+#include "2259_removeDigitFromNumbertoMaximizeResult.h"
+#include "2260_minimumCardPickup.h"
+#include "2262_appealSum.h"
 
-solution *sol = new CountExcellentPairs;
+solution *sol = new AppealSum;
 
 int main() {
     sol->check();
