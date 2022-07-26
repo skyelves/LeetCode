@@ -14,8 +14,9 @@
 #include "2248_intersection.h"
 #include "2249_countLatticePoints.h"
 #include "2250_countRectangles.h"
+#include "2251_fullBloomFlowers.h"
 
-solution *sol = new CountRectangles;
+solution *sol = new FullBloomFlowers;
 
 int main() {
     sol->check();
