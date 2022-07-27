@@ -16,6 +16,7 @@
 #include "2250_countRectangles.h"
 #include "2251_fullBloomFlowers.h"
 #include "236_lowestCommonAncestor.h"
+#include "114_flatten.h"
 
 solution *sol = new FullBloomFlowers;
 
