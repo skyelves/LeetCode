@@ -17,8 +17,9 @@
 #include "2251_fullBloomFlowers.h"
 #include "236_lowestCommonAncestor.h"
 #include "114_flatten.h"
+#include "2003_smallestMissingValueSubtree.h"
 
-solution *sol = new FullBloomFlowers;
+solution *sol = new SmallestMissingValueSubtree;
 
 int main() {
     sol->check();
