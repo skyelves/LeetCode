@@ -18,8 +18,9 @@
 #include "236_lowestCommonAncestor.h"
 #include "114_flatten.h"
 #include "2003_smallestMissingValueSubtree.h"
+#include "242_isAnagram.h"
 
-solution *sol = new SmallestMissingValueSubtree;
+solution *sol = new IsAnagram;
 
 int main() {
     sol->check();
