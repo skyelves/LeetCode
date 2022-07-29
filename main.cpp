@@ -19,8 +19,9 @@
 #include "114_flatten.h"
 #include "2003_smallestMissingValueSubtree.h"
 #include "242_isAnagram.h"
+#include "890_findAndReplacePattern.h"
 
-solution *sol = new IsAnagram;
+solution *sol = new FindAndReplacePattern;
 
 int main() {
     sol->check();
