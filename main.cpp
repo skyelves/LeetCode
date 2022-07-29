@@ -20,8 +20,9 @@
 #include "2003_smallestMissingValueSubtree.h"
 #include "242_isAnagram.h"
 #include "890_findAndReplacePattern.h"
+#include "1044_longestDupSubstring.h"
 
-solution *sol = new FindAndReplacePattern;
+solution *sol = new LongestDupSubstring;
 
 int main() {
     sol->check();
