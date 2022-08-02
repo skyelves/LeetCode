@@ -21,8 +21,9 @@
 #include "242_isAnagram.h"
 #include "890_findAndReplacePattern.h"
 #include "1044_longestDupSubstring.h"
+#include "307_numArray.h"
 
-solution *sol = new LongestDupSubstring;
+solution *sol = new NumArray;
 
 int main() {
     sol->check();
