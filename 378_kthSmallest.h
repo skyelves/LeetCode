@@ -12,9 +12,9 @@ public:
     int kthSmallest(vector<vector<int>> &matrix, int k) {
         int len = matrix.size(), width = matrix[0].size();
         multimap<int, pair<int, int>> mm;
-        set<pair<int, int>> ss;
+        int *visited = new int[len + 1];
         mm.insert({matrix[0][0], {0, 0}});
-        ss.insert({0, 0});
+        memset(visited, 0, sizeof(int) * (len + 1));
         int cnt = 0, res = 0;
         while (cnt < k) {
             auto iter = mm.begin();
@@ -22,17 +22,13 @@ public:
             res = iter->first;
             mm.erase(iter);
             cnt++;
-            if (i + 1 < len) {
-                if (ss.find({i + 1, j}) == ss.end()) {
-                    mm.insert({matrix[i + 1][j], {i + 1, j}});
-                    ss.insert({i + 1, j});
-                }
+            if (i + 1 < len && (visited[i + 1] < j || j == 0)) {
+                mm.insert({matrix[i + 1][j], {i + 1, j}});
+                visited[i + 1] = j;
             }
-            if (j + 1 < width) {
-                if (ss.find({i, j + 1}) == ss.end()) {
-                    mm.insert({matrix[i][j + 1], {i, j + 1}});
-                    ss.insert({i, j + 1});
-                }
+            if (j + 1 < width && visited[i] < j + 1) {
+                mm.insert({matrix[i][j + 1], {i, j + 1}});
+                visited[i] = j + 1;
             }
         }
         return res;
