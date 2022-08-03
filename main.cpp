@@ -23,8 +23,9 @@
 #include "1044_longestDupSubstring.h"
 #include "307_numArray.h"
 #include "378_kthSmallest.h"
+#include "668_findKthNumber.h"
 
-solution *sol = new KthSmallest;
+solution *sol = new FindKthNumber;
 
 int main() {
     sol->check();
