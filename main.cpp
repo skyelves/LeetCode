@@ -22,8 +22,9 @@
 #include "890_findAndReplacePattern.h"
 #include "1044_longestDupSubstring.h"
 #include "307_numArray.h"
+#include "378_kthSmallest.h"
 
-solution *sol = new NumArray;
+solution *sol = new KthSmallest;
 
 int main() {
     sol->check();
