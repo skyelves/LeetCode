@@ -24,8 +24,9 @@
 #include "307_numArray.h"
 #include "378_kthSmallest.h"
 #include "668_findKthNumber.h"
+#include "729_myCalendar.h"
 
-solution *sol = new FindKthNumber;
+solution *sol = new MyCalendar;
 
 int main() {
     sol->check();
