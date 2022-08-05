@@ -26,8 +26,9 @@
 #include "668_findKthNumber.h"
 #include "729_myCalendar.h"
 #include "731_myCalendarTwo.h"
+#include "732_myCalendarThree.h"
 
-solution *sol = new MyCalendarTwo;
+solution *sol = new MyCalendarThree;
 
 int main() {
     sol->check();
