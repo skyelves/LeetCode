@@ -8,4 +8,4 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         2259_removeDigitFromNumbertoMaximizeResult.h 2260_minimumCardPickup.h 2261_countDistinct.h 2262_appealSum.h
         2248_intersection.h 2249_countLatticePoints.h 2250_countRectangles.h 2251_fullBloomFlowers.h
         114_flatten.h 2003_smallestMissingValueSubtree.h 242_isAnagram.h 890_findAndReplacePattern.h 1044_longestDupSubstring.h 916_wordSubsets.h 307_numArray.h
-        378_kthSmallest.h 668_findKthNumber.h 729_myCalendar.h 731_myCalendarTwo.h 732_myCalendarThree.h)
+        378_kthSmallest.h 668_findKthNumber.h 729_myCalendar.h 731_myCalendarTwo.h 732_myCalendarThree.h 377_combinationSum4.h)
