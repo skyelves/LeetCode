@@ -30,8 +30,9 @@
 #include "377_combinationSum4.h"
 #include "98_isValidBST.h"
 #include "3_lengthOfLongestSubstring.h"
+#include "1996_numberOfWeakCharacters.h"
 
-solution *sol = new LengthOfLongestSubstring;
+solution *sol = new NumberOfWeakCharacters;
 
 int main() {
     sol->check();
