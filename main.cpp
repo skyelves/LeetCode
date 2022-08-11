@@ -28,8 +28,10 @@
 #include "731_myCalendarTwo.h"
 #include "732_myCalendarThree.h"
 #include "377_combinationSum4.h"
+#include "98_isValidBST.h"
+#include "3_lengthOfLongestSubstring.h"
 
-solution *sol = new CombinationSum4;
+solution *sol = new LengthOfLongestSubstring;
 
 int main() {
     sol->check();
