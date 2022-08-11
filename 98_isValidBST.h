@@ -10,7 +10,7 @@
 
 // Definition for a binary tree node.
 
-class Solution {
+class IsValidBST {
 public:
     struct TreeNode {
         int val;
