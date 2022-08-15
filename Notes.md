@@ -100,3 +100,12 @@ string getPath(int i, int j) {
 }
 ```
 https://www.cnblogs.com/wangyuliang/p/9216365.html
+
+
+## Dijkstra (greedy)
+
+Problem: calculate the minimum distance from one node to other nodes
+
+https://blog.51cto.com/u_15178976/2790840
+
+Optimizations: use A* algorithm prune the search space, but may not find the exact optimal path.
