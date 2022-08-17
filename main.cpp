@@ -33,8 +33,9 @@
 #include "1996_numberOfWeakCharacters.h"
 #include "126_findLadders.h"
 #include "127_ladderLength.h"
+#include "433_minMutation.h"
 
-solution *sol = new LadderLength;
+solution *sol = new MinMutation;
 
 int main() {
     sol->check();
