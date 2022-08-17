@@ -32,8 +32,9 @@
 #include "3_lengthOfLongestSubstring.h"
 #include "1996_numberOfWeakCharacters.h"
 #include "126_findLadders.h"
+#include "127_ladderLength.h"
 
-solution *sol = new FindLadders;
+solution *sol = new LadderLength;
 
 int main() {
     sol->check();
