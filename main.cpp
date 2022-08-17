@@ -31,8 +31,9 @@
 #include "98_isValidBST.h"
 #include "3_lengthOfLongestSubstring.h"
 #include "1996_numberOfWeakCharacters.h"
+#include "126_findLadders.h"
 
-solution *sol = new NumberOfWeakCharacters;
+solution *sol = new FindLadders;
 
 int main() {
     sol->check();
