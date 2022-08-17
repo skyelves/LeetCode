@@ -34,8 +34,9 @@
 #include "126_findLadders.h"
 #include "127_ladderLength.h"
 #include "433_minMutation.h"
+#include "2157_groupStrings.h"
 
-solution *sol = new MinMutation;
+solution *sol = new GroupStrings;
 
 int main() {
     sol->check();

@@ -9,4 +9,4 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         2248_intersection.h 2249_countLatticePoints.h 2250_countRectangles.h 2251_fullBloomFlowers.h
         114_flatten.h 2003_smallestMissingValueSubtree.h 242_isAnagram.h 890_findAndReplacePattern.h 1044_longestDupSubstring.h 916_wordSubsets.h 307_numArray.h
         378_kthSmallest.h 668_findKthNumber.h 729_myCalendar.h 731_myCalendarTwo.h 732_myCalendarThree.h 377_combinationSum4.h
-        98_isValidBST.h 3_lengthOfLongestSubstring.h 1996_numberOfWeakCharacters.h 126_findLadders.h 127_ladderLength.h 433_minMutation.h)
+        98_isValidBST.h 3_lengthOfLongestSubstring.h 1996_numberOfWeakCharacters.h 126_findLadders.h 127_ladderLength.h 433_minMutation.h 2157_groupStrings.h)
