@@ -35,8 +35,9 @@
 #include "127_ladderLength.h"
 #include "433_minMutation.h"
 #include "2157_groupStrings.h"
+#include "1338_minSetSize.h"
 
-solution *sol = new GroupStrings;
+solution *sol = new MinSetSize;
 
 int main() {
     sol->check();
