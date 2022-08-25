@@ -36,8 +36,9 @@
 #include "433_minMutation.h"
 #include "2157_groupStrings.h"
 #include "1338_minSetSize.h"
+#include "128_longestConsecutive.h"
 
-solution *sol = new MinSetSize;
+solution *sol = new LongestConsecutive;
 
 int main() {
     sol->check();
