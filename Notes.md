@@ -5,7 +5,7 @@ Naive solution: compare bit by bit, O(mn)
 
 Rabin-Karp 's algorithm, O(n): using Rolling Hashing https://coolcao.com/2020/08/20/rabin-karp/
 
-Examples: 1044: Longest Duplicate Substring
+Examples: Leetcode 1044. Longest Duplicate Substring
 
 
 
@@ -53,10 +53,28 @@ For array [1,2,3,4,5], the segment tree looks like follows:
 
 https://zhuanlan.zhihu.com/p/106118909
 
-Examples: 307: Range Sum Query - Mutable
+Examples: Leetcode 307. Range Sum Query - Mutable
+
 
 
 ## Disjoint-set
+
+**Key Idea:** Use one representative item in a set to represent the whole set.
+
+When querying two items, we first find the representative items of the two items. If the representative item is the same one, they are in the same set.
+
+When merge two items, we first find the representative items of the two items. If the two representative items are not the same, we set the father of one item to the other. The following two figures show the procedure.
+
+<img src="https://pic1.zhimg.com/80/v2-3c353bc781c7f3553079d541a9cfdc28_1440w.jpg" alt="img" style="zoom:50%;" />                          <img src="https://pic3.zhimg.com/80/v2-6362d8b13705d5ba17b19cdeee453022_1440w.jpg" alt="img" style="zoom:50%;" />
+
+**Optimization:**
+
+1. Path compression
+2. Merge by rank
+
+https://zhuanlan.zhihu.com/p/93647900
+
+Examples: Leetcode 128. Longest Consecutive Sequence 
 
 
 
@@ -100,6 +118,7 @@ string getPath(int i, int j) {
 }
 ```
 https://www.cnblogs.com/wangyuliang/p/9216365.html
+
 
 
 ## Dijkstra (greedy)
