@@ -37,8 +37,9 @@
 #include "2157_groupStrings.h"
 #include "1338_minSetSize.h"
 #include "128_longestConsecutive.h"
+#include "383_canConstruct.h"
 
-solution *sol = new LongestConsecutive;
+solution *sol = new CanConstruct;
 
 int main() {
     sol->check();
