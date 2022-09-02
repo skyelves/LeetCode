@@ -38,8 +38,9 @@
 #include "1338_minSetSize.h"
 #include "128_longestConsecutive.h"
 #include "383_canConstruct.h"
+#include "691_minStickers.h"
 
-solution *sol = new CanConstruct;
+solution *sol = new MinStickers;
 
 int main() {
     sol->check();
