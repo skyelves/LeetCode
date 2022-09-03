@@ -39,6 +39,7 @@
 #include "128_longestConsecutive.h"
 #include "383_canConstruct.h"
 #include "691_minStickers.h"
+#include "637_averageOfLevels.h"
 
 solution *sol = new MinStickers;
 
