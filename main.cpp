@@ -41,6 +41,7 @@
 #include "691_minStickers.h"
 #include "637_averageOfLevels.h"
 #include "341_NestedIterator.h"
+#include "987_verticalTraversal.h"
 
 solution *sol = new MinStickers;
 
