@@ -40,6 +40,7 @@
 #include "383_canConstruct.h"
 #include "691_minStickers.h"
 #include "637_averageOfLevels.h"
+#include "341_NestedIterator.h"
 
 solution *sol = new MinStickers;
 
