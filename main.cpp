@@ -42,8 +42,9 @@
 #include "637_averageOfLevels.h"
 #include "341_NestedIterator.h"
 #include "987_verticalTraversal.h"
+#include "29_divide.h"
 
-solution *sol = new MinStickers;
+solution *sol = new Divide;
 
 int main() {
     sol->check();
