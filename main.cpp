@@ -43,8 +43,9 @@
 #include "341_NestedIterator.h"
 #include "987_verticalTraversal.h"
 #include "29_divide.h"
+#include "122_maxProfit.h"
 
-solution *sol = new Divide;
+solution *sol = new MaxProfit;
 
 int main() {
     sol->check();
