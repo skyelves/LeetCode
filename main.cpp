@@ -44,8 +44,9 @@
 #include "987_verticalTraversal.h"
 #include "29_divide.h"
 #include "122_maxProfit.h"
+#include "11_maxArea.h"
 
-solution *sol = new MaxProfit;
+solution *sol = new MaxArea;
 
 int main() {
     sol->check();
