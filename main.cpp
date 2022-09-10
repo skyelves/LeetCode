@@ -45,8 +45,9 @@
 #include "29_divide.h"
 #include "122_maxProfit.h"
 #include "11_maxArea.h"
+#include "198_houseRobber.h"
 
-solution *sol = new MaxArea;
+solution *sol = new Rob;
 
 int main() {
     sol->check();
