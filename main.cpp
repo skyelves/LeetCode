@@ -49,8 +49,9 @@
 #include "53_maxSubArray.h"
 #include "1010_numPairsDivisibleBy60.h"
 #include "1836_deleteDuplicatesUnsorted.h"
+#include "1209_removeDuplicates.h"
 
-solution *sol = new NumPairsDivisibleBy60;
+solution *sol = new RemoveDuplicates;
 
 int main() {
     sol->check();
