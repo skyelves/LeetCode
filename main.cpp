@@ -48,6 +48,7 @@
 #include "198_houseRobber.h"
 #include "53_maxSubArray.h"
 #include "1010_numPairsDivisibleBy60.h"
+#include "1836_deleteDuplicatesUnsorted.h"
 
 solution *sol = new NumPairsDivisibleBy60;
 
