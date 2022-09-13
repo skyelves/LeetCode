@@ -46,8 +46,9 @@
 #include "122_maxProfit.h"
 #include "11_maxArea.h"
 #include "198_houseRobber.h"
+#include "53_maxSubArray.h"
 
-solution *sol = new Rob;
+solution *sol = new MaxSubArray;
 
 int main() {
     sol->check();
