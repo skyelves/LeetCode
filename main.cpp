@@ -47,8 +47,9 @@
 #include "11_maxArea.h"
 #include "198_houseRobber.h"
 #include "53_maxSubArray.h"
+#include "1010_numPairsDivisibleBy60.h"
 
-solution *sol = new MaxSubArray;
+solution *sol = new NumPairsDivisibleBy60;
 
 int main() {
     sol->check();
