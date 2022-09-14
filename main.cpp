@@ -55,6 +55,7 @@
 #include "1356_sortByBits.h"
 #include "647_countSubstrings.h"
 #include "780_reachingPoints.h"
+#include "49_groupAnagrams.h"
 
 solution *sol = new ReachingPoints;
 
