@@ -50,8 +50,9 @@
 #include "1010_numPairsDivisibleBy60.h"
 #include "1836_deleteDuplicatesUnsorted.h"
 #include "1209_removeDuplicates.h"
+#include "322_coinChange.h"
 
-solution *sol = new RemoveDuplicates;
+solution *sol = new CoinChange;
 
 int main() {
     sol->check();
