@@ -51,8 +51,9 @@
 #include "1836_deleteDuplicatesUnsorted.h"
 #include "1209_removeDuplicates.h"
 #include "322_coinChange.h"
+#include "1328_breakPalindrome.h"
 
-solution *sol = new CoinChange;
+solution *sol = new BreakPalindrome;
 
 int main() {
     sol->check();
