@@ -53,8 +53,9 @@
 #include "322_coinChange.h"
 #include "1328_breakPalindrome.h"
 #include "1356_sortByBits.h"
+#include "647_countSubstrings.h"
 
-solution *sol = new SortByBits;
+solution *sol = new CountSubstrings;
 
 int main() {
     sol->check();
