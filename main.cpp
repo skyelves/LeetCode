@@ -52,8 +52,9 @@
 #include "1209_removeDuplicates.h"
 #include "322_coinChange.h"
 #include "1328_breakPalindrome.h"
+#include "1356_sortByBits.h"
 
-solution *sol = new BreakPalindrome;
+solution *sol = new SortByBits;
 
 int main() {
     sol->check();
