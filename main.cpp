@@ -54,8 +54,9 @@
 #include "1328_breakPalindrome.h"
 #include "1356_sortByBits.h"
 #include "647_countSubstrings.h"
+#include "780_reachingPoints.h"
 
-solution *sol = new CountSubstrings;
+solution *sol = new ReachingPoints;
 
 int main() {
     sol->check();
