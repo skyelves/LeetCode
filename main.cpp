@@ -57,8 +57,9 @@
 #include "780_reachingPoints.h"
 #include "49_groupAnagrams.h"
 #include "5_longestPalindrome.h"
+#include "516_longestPalindromeSubseq.h"
 
-solution *sol = new LongestPalindrome;
+solution *sol = new LongestPalindromeSubseq;
 
 int main() {
     sol->check();
