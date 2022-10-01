@@ -58,8 +58,9 @@
 #include "49_groupAnagrams.h"
 #include "5_longestPalindrome.h"
 #include "516_longestPalindromeSubseq.h"
+#include "1029_twoCitySchedCost.h"
 
-solution *sol = new LongestPalindromeSubseq;
+solution *sol = new TwoCitySchedCost;
 
 int main() {
     sol->check();
