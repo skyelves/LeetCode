@@ -25,20 +25,30 @@ public:
     }
 
     int top(int K) {
-        vector<int> sorted;
-        for (auto i : IdScore) {
-            sorted.push_back(i.second);
-        }
-        sort(sorted.begin(), sorted.end(), [](int &a, int &b){return a > b;});
-        int res = 0;
+        priority_queue<int, vector<int>, greater<int> > pq;
+        auto iter = IdScore.begin();
         for (int i = 0; i < K; ++i) {
-            res += sorted[i];
+            pq.push(iter->second);
+            iter++;
+        }
+        while (iter != IdScore.end()) {
+            int tmp = pq.top();
+            if (tmp < iter->second) {
+                pq.pop();
+                pq.push(iter->second);
+            }
+            iter++;
+        }
+        int res = 0;
+        while (!pq.empty()) {
+            res += pq.top();
+            pq.pop();
         }
         return res;
     }
 
     void reset(int playerId) {
-        IdScore[playerId] = 0;
+        IdScore.erase(playerId);
     }
 };
 
