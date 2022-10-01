@@ -59,8 +59,9 @@
 #include "5_longestPalindrome.h"
 #include "516_longestPalindromeSubseq.h"
 #include "1029_twoCitySchedCost.h"
+#include "394_decodeString.h"
 
-solution *sol = new TwoCitySchedCost;
+solution *sol = new DecodeString;
 
 int main() {
     sol->check();
