@@ -60,8 +60,9 @@
 #include "516_longestPalindromeSubseq.h"
 #include "1029_twoCitySchedCost.h"
 #include "394_decodeString.h"
+#include "253_minMeetingRooms.h"
 
-solution *sol = new DecodeString;
+solution *sol = new MinMeetingRooms;
 
 int main() {
     sol->check();
