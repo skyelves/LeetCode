@@ -62,8 +62,9 @@
 #include "394_decodeString.h"
 #include "253_minMeetingRooms.h"
 #include "723_candyCrush.h"
+#include "797_allPathsSourceTarget.h"
 
-solution *sol = new CandyCrush;
+solution *sol = new AllPathsSourceTarget;
 
 int main() {
     sol->check();
