@@ -61,8 +61,9 @@
 #include "1029_twoCitySchedCost.h"
 #include "394_decodeString.h"
 #include "253_minMeetingRooms.h"
+#include "723_candyCrush.h"
 
-solution *sol = new MinMeetingRooms;
+solution *sol = new CandyCrush;
 
 int main() {
     sol->check();
