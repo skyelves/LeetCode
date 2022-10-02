@@ -64,8 +64,9 @@
 #include "723_candyCrush.h"
 #include "797_allPathsSourceTarget.h"
 #include "140_wordBreak.h"
+#include "200_numIslands.h"
 
-solution *sol = new WordBreak;
+solution *sol = new NumIslands;
 
 int main() {
     sol->check();
