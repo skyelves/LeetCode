@@ -65,8 +65,9 @@
 #include "797_allPathsSourceTarget.h"
 #include "140_wordBreak.h"
 #include "200_numIslands.h"
+#include "56_merge.h"
 
-solution *sol = new NumIslands;
+solution *sol = new Merge;
 
 int main() {
     sol->check();
