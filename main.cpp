@@ -3,7 +3,7 @@
 #include "2_addTwoNumbers.h"
 #include "1021_removeOutermostParentheses.h"
 #include "2166_designBitset.h"
-#include "316removeDuplicateLetters.h"
+#include "316_removeDuplicateLetters.h"
 #include "2030_smallestK-LengthSubsequenceWithOccurrencesofaLetter.h"
 #include "2354_numberOfExcellentPairs.h"
 #include "2353_designAFoodRatingSystem.h"
@@ -63,8 +63,9 @@
 #include "253_minMeetingRooms.h"
 #include "723_candyCrush.h"
 #include "797_allPathsSourceTarget.h"
+#include "140_wordBreak.h"
 
-solution *sol = new AllPathsSourceTarget;
+solution *sol = new WordBreak;
 
 int main() {
     sol->check();
