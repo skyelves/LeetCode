@@ -66,8 +66,9 @@
 #include "140_wordBreak.h"
 #include "200_numIslands.h"
 #include "56_merge.h"
+#include "1583_unhappyFriends.h"
 
-solution *sol = new Merge;
+solution *sol = new UnhappyFriends;
 
 int main() {
     sol->check();
