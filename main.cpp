@@ -67,8 +67,9 @@
 #include "200_numIslands.h"
 #include "56_merge.h"
 #include "1583_unhappyFriends.h"
+#include "994_orangesRotting.h"
 
-solution *sol = new UnhappyFriends;
+solution *sol = new OrangesRotting;
 
 int main() {
     sol->check();
