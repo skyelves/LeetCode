@@ -69,8 +69,9 @@
 #include "1583_unhappyFriends.h"
 #include "994_orangesRotting.h"
 #include "1375_numTimesAllBlue.h"
+#include "1531_getLengthOfOptimalCompression.h"
 
-solution *sol = new NumTimesAllBlue;
+solution *sol = new GetLengthOfOptimalCompression;
 
 int main() {
     sol->check();
