@@ -68,8 +68,9 @@
 #include "56_merge.h"
 #include "1583_unhappyFriends.h"
 #include "994_orangesRotting.h"
+#include "1375_numTimesAllBlue.h"
 
-solution *sol = new OrangesRotting;
+solution *sol = new NumTimesAllBlue;
 
 int main() {
     sol->check();
