@@ -71,8 +71,9 @@
 #include "1375_numTimesAllBlue.h"
 #include "1531_getLengthOfOptimalCompression.h"
 #include "1444_ways.h"
+#include "16_threeSumClosest.h"
 
-solution *sol = new DividePizza;
+solution *sol = new ThreeSumClosest;
 
 int main() {
     sol->check();
