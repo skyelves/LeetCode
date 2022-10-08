@@ -73,8 +73,9 @@
 #include "1444_ways.h"
 #include "16_threeSumClosest.h"
 #include "259_threeSumSmaller.h"
+#include "560_subarraySum.h"
 
-solution *sol = new ThreeSumSmaller;
+solution *sol = new SubarraySum;
 
 int main() {
     sol->check();
