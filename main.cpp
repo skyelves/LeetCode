@@ -70,8 +70,9 @@
 #include "994_orangesRotting.h"
 #include "1375_numTimesAllBlue.h"
 #include "1531_getLengthOfOptimalCompression.h"
+#include "1444_ways.h"
 
-solution *sol = new GetLengthOfOptimalCompression;
+solution *sol = new DividePizza;
 
 int main() {
     sol->check();
