@@ -72,8 +72,9 @@
 #include "1531_getLengthOfOptimalCompression.h"
 #include "1444_ways.h"
 #include "16_threeSumClosest.h"
+#include "259_threeSumSmaller.h"
 
-solution *sol = new ThreeSumClosest;
+solution *sol = new ThreeSumSmaller;
 
 int main() {
     sol->check();
