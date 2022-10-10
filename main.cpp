@@ -74,8 +74,9 @@
 #include "16_threeSumClosest.h"
 #include "259_threeSumSmaller.h"
 #include "560_subarraySum.h"
+#include "1307_isSolvable.h"
 
-solution *sol = new SubarraySum;
+solution *sol = new IsSolvable;
 
 int main() {
     sol->check();
