@@ -75,8 +75,9 @@
 #include "259_threeSumSmaller.h"
 #include "560_subarraySum.h"
 #include "1307_isSolvable.h"
+#include "696_countBinarySubstrings.h"
 
-solution *sol = new IsSolvable;
+solution *sol = new CountBinarySubstrings;
 
 int main() {
     sol->check();
