@@ -77,8 +77,9 @@
 #include "1307_isSolvable.h"
 #include "696_countBinarySubstrings.h"
 #include "1048_longestStrChain.h"
+#include "1153_canConvert.h"
 
-solution *sol = new LongestStrChain;
+solution *sol = new CanConvert;
 
 int main() {
     sol->check();
