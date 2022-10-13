@@ -76,8 +76,9 @@
 #include "560_subarraySum.h"
 #include "1307_isSolvable.h"
 #include "696_countBinarySubstrings.h"
+#include "1048_longestStrChain.h"
 
-solution *sol = new CountBinarySubstrings;
+solution *sol = new LongestStrChain;
 
 int main() {
     sol->check();
