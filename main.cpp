@@ -79,8 +79,9 @@
 #include "1048_longestStrChain.h"
 #include "1153_canConvert.h"
 #include "548_splitArray.h"
+#include "555_splitLoopedString.h"
 
-solution *sol = new SplitArray;
+solution *sol = new SplitLoopedString;
 
 int main() {
     sol->check();
