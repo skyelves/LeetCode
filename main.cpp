@@ -82,8 +82,9 @@
 #include "555_splitLoopedString.h"
 #include "666_pathSum.h"
 #include "678_checkValidString.h"
+#include "1857_largestPathValue.h"
 
-solution *sol = new CheckValidString;
+solution *sol = new LargestPathValue;
 
 int main() {
     sol->check();
