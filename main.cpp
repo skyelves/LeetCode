@@ -83,8 +83,9 @@
 #include "666_pathSum.h"
 #include "678_checkValidString.h"
 #include "1857_largestPathValue.h"
+#include "221_maximalSquare.h"
 
-solution *sol = new LargestPathValue;
+solution *sol = new MaximalSquare;
 
 int main() {
     sol->check();
