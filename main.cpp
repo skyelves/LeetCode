@@ -81,8 +81,9 @@
 #include "548_splitArray.h"
 #include "555_splitLoopedString.h"
 #include "666_pathSum.h"
+#include "678_checkValidString.h"
 
-solution *sol = new PathSum;
+solution *sol = new CheckValidString;
 
 int main() {
     sol->check();
