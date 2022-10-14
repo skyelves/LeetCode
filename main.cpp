@@ -84,8 +84,9 @@
 #include "678_checkValidString.h"
 #include "1857_largestPathValue.h"
 #include "221_maximalSquare.h"
+#include "739_dailyTemperatures.h"
 
-solution *sol = new MaximalSquare;
+solution *sol = new DailyTemperatures;
 
 int main() {
     sol->check();
