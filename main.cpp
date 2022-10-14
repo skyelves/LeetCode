@@ -80,8 +80,9 @@
 #include "1153_canConvert.h"
 #include "548_splitArray.h"
 #include "555_splitLoopedString.h"
+#include "666_pathSum.h"
 
-solution *sol = new SplitLoopedString;
+solution *sol = new PathSum;
 
 int main() {
     sol->check();
