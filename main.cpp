@@ -85,8 +85,9 @@
 #include "1857_largestPathValue.h"
 #include "221_maximalSquare.h"
 #include "739_dailyTemperatures.h"
+#include "488_findMinStep.h"
 
-solution *sol = new LargestPathValue;
+solution *sol = new FindMinStep;
 
 int main() {
     sol->check();
