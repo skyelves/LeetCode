@@ -86,7 +86,7 @@
 #include "221_maximalSquare.h"
 #include "739_dailyTemperatures.h"
 
-solution *sol = new DailyTemperatures;
+solution *sol = new LargestPathValue;
 
 int main() {
     sol->check();

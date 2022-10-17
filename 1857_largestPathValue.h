@@ -9,34 +9,11 @@
 
 class LargestPathValue : public solution {
 public:
-    unordered_map<int, vector<int>> mm;
-    vector<int> inDegree;
-    int res = 0;
-
-    bool dfs(int curr, map<char, int> &colorMap, set<int> &ss, string &colors) {
-        auto iter = mm.find(curr);
-        if (iter != mm.end()) {
-            for (auto i : iter->second) {
-                if (ss.find(i) != ss.end())
-                    return true;
-                ss.insert(i);
-                ++colorMap[colors[i]];
-                bool tmp = dfs(i, colorMap, ss, colors);
-                ss.erase(i);
-                --colorMap[colors[i]];
-                if (tmp)
-                    return tmp;
-            }
-        } else {
-            for (auto &i : colorMap) {
-                res = max(i.second, res);
-            }
-        }
-        return false;
-    }
-
     int largestPathValue(string colors, vector<vector<int>> &edges) {
-        res = 0;
+        unordered_map<int, vector<int>> mm;
+        vector<int> inDegree;
+        vector<vector<int>> dp(colors.size(), vector<int>(26, 0));
+        int res = 0, cnt = colors.size();
         if (edges.size() == 0) return 1;
         inDegree.resize(colors.size());
         // create graph
@@ -45,17 +22,32 @@ public:
             mm[i].push_back(j);
             ++inDegree[j];
         }
-        for (int i = 0; i < edges.size(); ++i) {
-            if (inDegree[edges[i][0]] == 0) {
-                map<char, int> mm;
-                set<int> ss;
-                ss.insert(edges[i][0]);
-                ++mm[colors[edges[i][0]]];
-                if (dfs(edges[i][0], mm, ss, colors))
-                    return -1;
+        queue<int> qq;
+        for (int i = 0; i < colors.size(); ++i) {
+            if (inDegree[i] == 0) {
+                qq.push(i);
+                --cnt;
             }
         }
-        return res == 0 ? -1 : res;
+        while (!qq.empty()) {
+            int tmp = qq.front();
+            qq.pop();
+            --cnt;
+            ++dp[tmp][colors[tmp] - 'a'];
+            for (int i = 0; i < 26; ++i) {
+                res = max(res, dp[tmp][i]);
+            }
+            for (auto next : mm[tmp]) {
+                for (int i = 0; i < 26; ++i) {
+                    dp[next][i] = max(dp[next][i], dp[tmp][i]);
+                }
+                --inDegree[next];
+                if (inDegree[next] == 0) {
+                    qq.push(next);
+                }
+            }
+        }
+        return cnt == 0 ? res : -1;
     }
 
     void check() {
