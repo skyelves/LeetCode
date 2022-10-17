@@ -86,8 +86,9 @@
 #include "221_maximalSquare.h"
 #include "739_dailyTemperatures.h"
 #include "488_findMinStep.h"
+#include "773_slidingPuzzle.h"
 
-solution *sol = new FindMinStep;
+solution *sol = new SlidingPuzzle;
 
 int main() {
     sol->check();
