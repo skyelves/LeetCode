@@ -88,8 +88,9 @@
 #include "488_findMinStep.h"
 #include "773_slidingPuzzle.h"
 #include "1326_minTaps.h"
+#include "215_findKthLargest.h"
 
-solution *sol = new MinTaps;
+solution *sol = new FindKthLargest;
 
 int main() {
     sol->check();
