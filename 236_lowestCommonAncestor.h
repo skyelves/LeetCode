@@ -8,7 +8,7 @@
 #include "solution.h"
 
 
-class Solution : public solution {
+class LowestCommonAncestor : public solution {
 public:
 /**
  * Definition for a binary tree node.
