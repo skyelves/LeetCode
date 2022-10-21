@@ -87,8 +87,9 @@
 #include "739_dailyTemperatures.h"
 #include "488_findMinStep.h"
 #include "773_slidingPuzzle.h"
+#include "1326_minTaps.h"
 
-solution *sol = new SlidingPuzzle;
+solution *sol = new MinTaps;
 
 int main() {
     sol->check();
