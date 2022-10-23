@@ -90,8 +90,9 @@
 #include "1326_minTaps.h"
 #include "215_findKthLargest.h"
 #include "935_knightDialer.h"
+#include "79_wordSearch.h"
 
-solution *sol = new KnightDialer;
+solution *sol = new wordSearch;
 
 int main() {
     sol->check();
