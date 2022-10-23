@@ -89,8 +89,9 @@
 #include "773_slidingPuzzle.h"
 #include "1326_minTaps.h"
 #include "215_findKthLargest.h"
+#include "935_knightDialer.h"
 
-solution *sol = new FindKthLargest;
+solution *sol = new KnightDialer;
 
 int main() {
     sol->check();
