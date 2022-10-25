@@ -91,8 +91,9 @@
 #include "215_findKthLargest.h"
 #include "935_knightDialer.h"
 #include "79_wordSearch.h"
+#include "582_killProcess.h"
 
-solution *sol = new wordSearch;
+solution *sol = new KillProcess;
 
 int main() {
     sol->check();
