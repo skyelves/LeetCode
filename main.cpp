@@ -92,8 +92,9 @@
 #include "935_knightDialer.h"
 #include "79_wordSearch.h"
 #include "582_killProcess.h"
+#include "38_countAndSay.h"
 
-solution *sol = new KillProcess;
+solution *sol = new CountAndSay;
 
 int main() {
     sol->check();
