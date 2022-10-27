@@ -9,39 +9,42 @@
 
 class InvalidTransactions {
 public:
+    class transaction {
+    public:
+        string name;
+        string city;
+        int time;
+        int amount;
+        transaction(string _name, string _city, int _time, int _amount) : name(_name), city(_city), time(_time), amount(_amount) {}
+    };
+
     vector<string> invalidTransactions(vector<string> &transactions) {
         int len = transactions.size();
         vector<string> res;
-        vector<string> name, city;
-        vector<int> time, amount;
-        vector<bool> visited(len, false);
+        unordered_map<string, vector<transaction>> mm;
+        vector<transaction> vv;
         for (int i = 0; i < len; ++i) {
-            int idx1 = transactions[i].find(',');
-            int idx2 = transactions[i].find(',', idx1 + 1);
-            int idx3 = transactions[i].find(',', idx2 + 1);
-            int t = stoi(transactions[i].substr(idx1 + 1, idx2));
-            int a = stoi(transactions[i].substr(idx2 + 1, idx3));
-            if (a > 1000) {
-                visited[i] = true;
-                res.push_back(transactions[i]);
-            }
-            name.push_back(transactions[i].substr(0, idx1));
-            time.push_back(t);
-            amount.push_back(a);
-            city.push_back(transactions[i].substr(idx3, transactions[i].size()));
+            stringstream ss(transactions[i]);
+            string name, city, timeStr, amountStr;
+            getline(ss, name, ',');
+            getline(ss, timeStr, ',');
+            getline(ss, amountStr, ',');
+            getline(ss, city, ',');
+            int t = stoi(timeStr);
+            int a = stoi(amountStr);
+            auto tmp = transaction(name, city, t, a);
+            mm[name].push_back(tmp);
+            vv.emplace_back(tmp);
         }
         for (int i = 0; i < len; ++i) {
-            if (visited[i]) continue;
-            for (int j = 0; j < len; ++j) {
-                if (i != j && name[i] == name[j] && city[i] != city[j] && abs(time[i] - time[j]) <= 60) {
-                    if (!visited[i]) {
-                        visited[i] = true;
-                        res.push_back(transactions[i]);
-                    }
-                    if (!visited[j]) {
-                        visited[j] = true;
-                        res.push_back(transactions[j]);
-                    }
+            if (vv[i].amount > 1000) {
+                res.push_back(transactions[i]);
+                continue;
+            }
+            for (auto &j : mm[vv[i].name]) {
+                if (vv[i].city != j.city && abs(vv[i].time - j.time) <= 60) {
+                    res.push_back(transactions[i]);
+                    break;
                 }
             }
         }
