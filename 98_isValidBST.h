@@ -22,27 +22,17 @@ public:
     };
 
     bool isValid(TreeNode *root, int64_t lb = INT64_MIN, int64_t ub = INT64_MAX) {
-        if (root->val <= lb || root->val >= ub) {
+        if (root == nullptr)
+            return true;
+        if (root->val >= ub || root->val <= lb)
             return false;
-        }
-        bool res = true;
-        if (root->left != NULL) {
-            if (root->left->val >= root->val) {
-                return false;
-            }
-            int64_t tmp_ub = ub < root->val ? ub : root->val;
-            bool tmp = isValid(root->left, lb, tmp_ub);
-            res &= tmp;
-        }
-        if (root->right != NULL) {
-            if (root->right->val <= root->val) {
-                return false;
-            }
-            int64_t tmp_lb = lb > root->val ? lb : root->val;
-            bool tmp = isValid(root->right, tmp_lb, ub);
-            res &= tmp;
-        }
-        return res;
+        bool resLeft = isValid(root->left, lb, min(ub, (int64_t)root->val));
+        if (!resLeft)
+            return false;
+        bool resRight = isValid(root->right, max(lb, (int64_t)root->val), ub);
+        if (!resRight)
+            return false;
+        return true;
     }
 
     bool isValidBST(TreeNode* root) {
