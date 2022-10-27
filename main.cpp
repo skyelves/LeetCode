@@ -93,8 +93,9 @@
 #include "79_wordSearch.h"
 #include "582_killProcess.h"
 #include "38_countAndSay.h"
+#include "72_minDistance.h"
 
-solution *sol = new CountAndSay;
+solution *sol = new MinDistance;
 
 int main() {
     sol->check();
