@@ -94,8 +94,9 @@
 #include "582_killProcess.h"
 #include "38_countAndSay.h"
 #include "72_minDistance.h"
+#include "91_numDecodings.h"
 
-solution *sol = new MinDistance;
+solution *sol = new NumDecodings;
 
 int main() {
     sol->check();
