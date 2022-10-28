@@ -99,8 +99,9 @@
 #include "964_leastOpsExpressTarget.h"
 #include "33_rotatedSortedArray.h"
 #include "153_findMinRotated.h"
+#include "154_findMinimuminRotatedSortedArray2.h"
 
-solution *sol = new FindMin;
+solution *sol = new FindMinimuminRotatedSortedArray2;
 
 int main() {
     sol->check();
