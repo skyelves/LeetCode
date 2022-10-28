@@ -95,8 +95,9 @@
 #include "38_countAndSay.h"
 #include "72_minDistance.h"
 #include "91_numDecodings.h"
+#include "611_triangleNumber.h"
 
-solution *sol = new NumDecodings;
+solution *sol = new TriangleNumber;
 
 int main() {
     sol->check();
