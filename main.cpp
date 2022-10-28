@@ -97,8 +97,9 @@
 #include "91_numDecodings.h"
 #include "611_triangleNumber.h"
 #include "964_leastOpsExpressTarget.h"
+#include "33_rotatedSortedArray.h"
 
-solution *sol = new LeastOpsExpressTarget;
+solution *sol = new RotatedSortedArray;
 
 int main() {
     sol->check();
