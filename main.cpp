@@ -96,8 +96,9 @@
 #include "72_minDistance.h"
 #include "91_numDecodings.h"
 #include "611_triangleNumber.h"
+#include "964_leastOpsExpressTarget.h"
 
-solution *sol = new TriangleNumber;
+solution *sol = new LeastOpsExpressTarget;
 
 int main() {
     sol->check();
