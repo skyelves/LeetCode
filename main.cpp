@@ -98,8 +98,9 @@
 #include "611_triangleNumber.h"
 #include "964_leastOpsExpressTarget.h"
 #include "33_rotatedSortedArray.h"
+#include "153_findMinRotated.h"
 
-solution *sol = new RotatedSortedArray;
+solution *sol = new FindMin;
 
 int main() {
     sol->check();
