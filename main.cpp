@@ -101,8 +101,9 @@
 #include "153_findMinRotated.h"
 #include "154_findMinimuminRotatedSortedArray2.h"
 #include "42_trappingRainWater.h"
+#include "69_sqrt.h"
 
-solution *sol = new TrappingRainWater;
+solution *sol = new MySqrt;
 
 int main() {
     sol->check();
