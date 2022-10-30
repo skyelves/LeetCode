@@ -102,8 +102,9 @@
 #include "154_findMinimuminRotatedSortedArray2.h"
 #include "42_trappingRainWater.h"
 #include "69_sqrt.h"
+#include "827_largestIsland.h"
 
-solution *sol = new MySqrt;
+solution *sol = new LargestIsland;
 
 int main() {
     sol->check();
