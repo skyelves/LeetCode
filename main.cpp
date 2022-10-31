@@ -103,8 +103,9 @@
 #include "42_trappingRainWater.h"
 #include "69_sqrt.h"
 #include "827_largestIsland.h"
+#include "518_coinChange2.h"
 
-solution *sol = new LargestIsland;
+solution *sol = new CoinChange2;
 
 int main() {
     sol->check();
