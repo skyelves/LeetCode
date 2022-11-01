@@ -105,8 +105,9 @@
 #include "827_largestIsland.h"
 #include "518_coinChange2.h"
 #include "46_permutation.h"
+#include "301_removeInvalidParentheses.h"
 
-solution *sol = new Rob;
+solution *sol = new RemoveInvalidParentheses;
 
 int main() {
     sol->check();
