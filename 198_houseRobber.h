@@ -16,24 +16,19 @@ public:
             return 0;
         else if (len == 1)
             return nums[0];
-        else if (len == 2)
-            return max(nums[0], nums[1]);
-        int *dp0 = new int[len];
-        int *dp1 = new int[len];
+        vector<int> dp0(len, 0), dp1(len, 0);
         dp0[0] = 0;
-        dp0[1] = nums[0];
         dp1[0] = nums[0];
-        dp1[1] = nums[1];
-        for (int i = 2; i < len; ++i) {
-            dp0[i] = max(dp1[i - 1], dp0[i - 1]);
-            dp1[i] = nums[i] + dp0[i - 1];
+        for (int i = 1; i < len; ++i) {
+            dp0[i] = max(dp0[i - 1], dp1[i - 1]);
+            dp1[i] = dp0[i - 1] + nums[i];
         }
         return max(dp0[len - 1], dp1[len - 1]);
     }
 
     void check() {
         int res = 0;
-        vector<int> nums{1,2,3,1};
+        vector<int> nums{1, 2, 3, 1};
         res = rob(nums);
         cout << res << endl;
     }

@@ -106,7 +106,7 @@
 #include "518_coinChange2.h"
 #include "46_permutation.h"
 
-solution *sol = new Permute;
+solution *sol = new Rob;
 
 int main() {
     sol->check();
