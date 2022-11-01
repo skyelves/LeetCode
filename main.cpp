@@ -104,8 +104,9 @@
 #include "69_sqrt.h"
 #include "827_largestIsland.h"
 #include "518_coinChange2.h"
+#include "46_permutation.h"
 
-solution *sol = new CoinChange2;
+solution *sol = new Permute;
 
 int main() {
     sol->check();
