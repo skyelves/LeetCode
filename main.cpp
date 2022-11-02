@@ -107,8 +107,9 @@
 #include "46_permutation.h"
 #include "301_removeInvalidParentheses.h"
 #include "656_cheapestJump.h"
+#include "47_Permutations2.h"
 
-solution *sol = new CheapestJump;
+solution *sol = new PermuteUnique;
 
 int main() {
     sol->check();
