@@ -106,8 +106,9 @@
 #include "518_coinChange2.h"
 #include "46_permutation.h"
 #include "301_removeInvalidParentheses.h"
+#include "656_cheapestJump.h"
 
-solution *sol = new RemoveInvalidParentheses;
+solution *sol = new CheapestJump;
 
 int main() {
     sol->check();
