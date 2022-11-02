@@ -108,8 +108,9 @@
 #include "301_removeInvalidParentheses.h"
 #include "656_cheapestJump.h"
 #include "47_Permutations2.h"
+#include "2115_findAllRecipes.h"
 
-solution *sol = new PermuteUnique;
+solution *sol = new FindAllRecipes;
 
 int main() {
     sol->check();
