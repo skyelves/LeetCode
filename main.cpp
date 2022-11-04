@@ -109,8 +109,9 @@
 #include "656_cheapestJump.h"
 #include "47_Permutations2.h"
 #include "2115_findAllRecipes.h"
+#include "399_calcEquation.h"
 
-solution *sol = new FindAllRecipes;
+solution *sol = new CalcEquation;
 
 int main() {
     sol->check();
