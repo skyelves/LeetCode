@@ -110,8 +110,9 @@
 #include "47_Permutations2.h"
 #include "2115_findAllRecipes.h"
 #include "399_calcEquation.h"
+#include "286_wallsAndGates.h"
 
-solution *sol = new CalcEquation;
+solution *sol = new WallsAndGates;
 
 int main() {
     sol->check();
