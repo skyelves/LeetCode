@@ -2,8 +2,8 @@
 // Created by 王柯 on 11/4/22.
 //
 
-#ifndef LEETCODE_LFUCACHE_H
-#define LEETCODE_LFUCACHE_H
+#ifndef LEETCODE_460_LFUCACHE_H
+#define LEETCODE_460_LFUCACHE_H
 
 #include "solution.h"
 
@@ -64,4 +64,4 @@ public:
  * obj->put(key,value);
  */
 
-#endif //LEETCODE_LFUCACHE_H
+#endif //LEETCODE_460_LFUCACHE_H
