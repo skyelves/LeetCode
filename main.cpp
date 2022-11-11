@@ -111,8 +111,9 @@
 #include "2115_findAllRecipes.h"
 #include "399_calcEquation.h"
 #include "286_wallsAndGates.h"
+#include "1366_rankTeams.h"
 
-solution *sol = new WallsAndGates;
+solution *sol = new RankTeams;
 
 int main() {
     sol->check();
