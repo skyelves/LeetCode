@@ -112,8 +112,9 @@
 #include "399_calcEquation.h"
 #include "286_wallsAndGates.h"
 #include "1366_rankTeams.h"
+#include "1698_countDistinct.h"
 
-solution *sol = new RankTeams;
+solution *sol = new CountDistinctSubStrings;
 
 int main() {
     sol->check();
