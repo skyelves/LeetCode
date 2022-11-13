@@ -25,53 +25,37 @@ public:
 
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
         int carry = 0;
-        ListNode *res = new ListNode;
-        ListNode *res_tmp = res;
-        while (l1 != NULL && l2 != NULL) {
-            int tmp = l1->val + l2->val + carry;
-            if (tmp >= 10){
+        int len1 = 0, len2 = 0;
+        ListNode *t1 = l1, *t2 = l2, *lastNode = l1;
+        while (t1 != nullptr || t2 != nullptr) {
+            int tmp = carry;
+            if (t1 != nullptr) tmp += t1->val;
+            if (t2 != nullptr) tmp += t2->val;
+            if (tmp >= 10) {
                 carry = 1;
-                tmp -= 10;
+                tmp %= 10;
             } else {
                 carry = 0;
             }
-            ListNode *tmp_node = new ListNode(tmp);
-            res_tmp->next = tmp_node;
-            res_tmp = tmp_node;
-            l1 = l1->next;
-            l2 = l2->next;
-        }
-        while (l1 != NULL) {
-            int tmp = l1->val + carry;
-            if (tmp >= 10){
-                carry = 1;
-                tmp -= 10;
-            } else {
-                carry = 0;
+            if (t1 != nullptr) {
+                t1->val = tmp;
+                lastNode = t1;
+                t1 = t1->next;
+                ++len1;
             }
-            ListNode *tmp_node = new ListNode(tmp);
-            res_tmp->next = tmp_node;
-            res_tmp = tmp_node;
-            l1 = l1->next;
-        }
-        while (l2 != NULL) {
-            int tmp = l2->val + carry;
-            if (tmp >= 10){
-                carry = 1;
-                tmp -= 10;
-            } else {
-                carry = 0;
+            if (t2 != nullptr) {
+                t2->val = tmp;
+                lastNode = t2;
+                t2 = t2->next;
+                ++len2;
             }
-            ListNode *tmp_node = new ListNode(tmp);
-            res_tmp->next = tmp_node;
-            res_tmp = tmp_node;
-            l2 = l2->next;
         }
-        if (carry == 1) {
-            ListNode *tmp_node = new ListNode(carry);
-            res_tmp->next = tmp_node;
+        if (carry) {
+            ListNode *newNode = new ListNode(1);
+            lastNode->next = newNode;
         }
-        return res->next;
+
+        return len1 > len2 ? l1 : l2;
     }
 
     void check() {
