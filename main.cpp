@@ -113,8 +113,9 @@
 #include "286_wallsAndGates.h"
 #include "1366_rankTeams.h"
 #include "1698_countDistinct.h"
+#include "1787_minXORChanges.h"
 
-solution *sol = new CountDistinctSubStrings;
+solution *sol = new MinXORChanges;
 
 int main() {
     sol->check();
