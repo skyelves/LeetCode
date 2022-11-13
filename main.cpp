@@ -114,8 +114,9 @@
 #include "1366_rankTeams.h"
 #include "1698_countDistinct.h"
 #include "1787_minXORChanges.h"
+#include "1823_findTheWinner.h"
 
-solution *sol = new MinXORChanges;
+solution *sol = new FindTheWinner;
 
 int main() {
     sol->check();
