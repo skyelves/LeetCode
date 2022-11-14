@@ -116,8 +116,9 @@
 #include "1787_minXORChanges.h"
 #include "1823_findTheWinner.h"
 #include "1977_numberOfCombinations.h"
+#include "254_getFactors.h"
 
-solution *sol = new NumberOfCombinations;
+solution *sol = new GetFactors;
 
 int main() {
     sol->check();
