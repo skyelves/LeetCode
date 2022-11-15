@@ -117,8 +117,9 @@
 #include "1823_findTheWinner.h"
 #include "1977_numberOfCombinations.h"
 #include "254_getFactors.h"
+#include "4_findMedianSortedArrays.h"
 
-solution *sol = new GetFactors;
+solution *sol = new FindMedianSortedArrays;
 
 int main() {
     sol->check();
