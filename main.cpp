@@ -118,8 +118,9 @@
 #include "1977_numberOfCombinations.h"
 #include "254_getFactors.h"
 #include "4_findMedianSortedArrays.h"
+#include "308_NumMatrix.h"
 
-solution *sol = new FindMedianSortedArrays;
+solution *sol = new NumMatrix;
 
 int main() {
     sol->check();
