@@ -11,25 +11,18 @@ class LengthOfLongestSubstring : public solution {
 public:
     int lengthOfLongestSubstring(string s) {
         int len = s.size();
-        int res = 0;
+        int res = 0, currLen = 0;
+        vector<int> visited(256, -1);
         for (int i = 0; i < len; ++i) {
-            int j = 0;
-            bool visited[256] = {false};
-//            memset(visited, false, sizeof(visited));
-            while (i + j < len) {
-                char tmp = s[i+j];
-                if (!visited[tmp]) {
-                    j++;
-                    visited[tmp] = true;
-                } else {
-                    res = max(res, j);
-                    break;
-                }
+            if (visited[s[i]] == -1) {
+                ++currLen;
+            } else {
+                res = max(res, currLen);
+                currLen = min(currLen + 1, i - visited[s[i]]);
             }
-            if (i + j == len) {
-                res = max(res, j);
-            }
+            visited[s[i]] = i;
         }
+        res = max(res, currLen);
         return res;
     }
 

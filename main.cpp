@@ -120,7 +120,7 @@
 #include "4_findMedianSortedArrays.h"
 #include "308_NumMatrix.h"
 
-solution *sol = new NumMatrix;
+solution *sol = new LengthOfLongestSubstring;
 
 int main() {
     sol->check();
