@@ -121,8 +121,9 @@
 #include "308_NumMatrix.h"
 #include "22_generateParenthesis.h"
 #include "77_Combinations.h"
+#include "1702_maximumBinaryString.h"
 
-solution *sol = new Combine;
+solution *sol = new MaximumBinaryString;
 
 int main() {
     sol->check();
