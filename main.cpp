@@ -119,8 +119,9 @@
 #include "254_getFactors.h"
 #include "4_findMedianSortedArrays.h"
 #include "308_NumMatrix.h"
+#include "22_generateParenthesis.h"
 
-solution *sol = new LengthOfLongestSubstring;
+solution *sol = new GenerateParenthesis;
 
 int main() {
     sol->check();
