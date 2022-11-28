@@ -120,8 +120,9 @@
 #include "4_findMedianSortedArrays.h"
 #include "308_NumMatrix.h"
 #include "22_generateParenthesis.h"
+#include "77_Combinations.h"
 
-solution *sol = new GenerateParenthesis;
+solution *sol = new Combine;
 
 int main() {
     sol->check();
