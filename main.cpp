@@ -123,8 +123,9 @@
 #include "77_Combinations.h"
 #include "1702_maximumBinaryString.h"
 #include "329_longestIncreasingPath.h"
+#include "471_encodeStringwithShortestLength.h"
 
-solution *sol = new LongestIncreasingPath;
+solution *sol = new EncodeStringwithShortestLength;
 
 int main() {
     sol->check();
