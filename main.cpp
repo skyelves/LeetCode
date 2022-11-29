@@ -122,8 +122,9 @@
 #include "22_generateParenthesis.h"
 #include "77_Combinations.h"
 #include "1702_maximumBinaryString.h"
+#include "329_longestIncreasingPath.h"
 
-solution *sol = new MaximumBinaryString;
+solution *sol = new LongestIncreasingPath;
 
 int main() {
     sol->check();
