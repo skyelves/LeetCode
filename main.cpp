@@ -124,8 +124,9 @@
 #include "1702_maximumBinaryString.h"
 #include "329_longestIncreasingPath.h"
 #include "471_encodeStringwithShortestLength.h"
+#include "798_smallestRotationwithHighestScore.h"
 
-solution *sol = new EncodeStringwithShortestLength;
+solution *sol = new BestRotation;
 
 int main() {
     sol->check();
