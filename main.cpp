@@ -126,8 +126,9 @@
 #include "471_encodeStringwithShortestLength.h"
 #include "798_smallestRotationwithHighestScore.h"
 #include "149_maxPointsOnaLine.h"
+#include "1900_earliestAndLatest.h"
 
-solution *sol = new MaxPoints;
+solution *sol = new EarliestAndLatest;
 
 int main() {
     sol->check();
