@@ -125,8 +125,9 @@
 #include "329_longestIncreasingPath.h"
 #include "471_encodeStringwithShortestLength.h"
 #include "798_smallestRotationwithHighestScore.h"
+#include "149_maxPointsOnaLine.h"
 
-solution *sol = new BestRotation;
+solution *sol = new MaxPoints;
 
 int main() {
     sol->check();
