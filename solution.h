@@ -19,6 +19,8 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <sstream>
+#include <semaphore.h>
+#include <mutex>
 
 using namespace std;
 
