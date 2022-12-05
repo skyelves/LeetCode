@@ -127,8 +127,9 @@
 #include "798_smallestRotationwithHighestScore.h"
 #include "149_maxPointsOnaLine.h"
 #include "1900_earliestAndLatest.h"
+#include "730_countPalindromicSubsequences.h"
 
-solution *sol = new EarliestAndLatest;
+solution *sol = new CountPalindromicSubsequences;
 
 int main() {
     sol->check();
