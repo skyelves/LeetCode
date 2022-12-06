@@ -130,8 +130,9 @@
 #include "730_countPalindromicSubsequences.h"
 #include "772_BasicCalculatorIII.h"
 #include "224_BasicCalculator.h"
+#include "227_BasicCalculatorII.h"
 
-solution *sol = new BasicCaculator;
+solution *sol = new BasicCalculatorII;
 
 int main() {
     sol->check();
