@@ -131,8 +131,9 @@
 #include "224_BasicCalculator.h"
 #include "227_BasicCalculatorII.h"
 #include "772_BasicCalculatorIII.h"
+#include "1268_suggestedProducts.h"
 
-solution *sol = new BasicCaculatorIII;
+solution *sol = new SuggestedProducts;
 
 int main() {
     sol->check();
