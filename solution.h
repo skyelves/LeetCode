@@ -21,6 +21,7 @@
 #include <sstream>
 #include <semaphore.h>
 #include <mutex>
+#include <pthread.h>
 
 using namespace std;
 
