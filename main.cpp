@@ -128,8 +128,10 @@
 #include "149_maxPointsOnaLine.h"
 #include "1900_earliestAndLatest.h"
 #include "730_countPalindromicSubsequences.h"
+#include "772_BasicCalculatorIII.h"
+#include "224_BasicCalculator.h"
 
-solution *sol = new CountPalindromicSubsequences;
+solution *sol = new BasicCaculator;
 
 int main() {
     sol->check();
