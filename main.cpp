@@ -133,8 +133,9 @@
 #include "772_BasicCalculatorIII.h"
 #include "1268_suggestedProducts.h"
 #include "996_numSquarefulPerms.h"
+#include "629_kInversePairs.h"
 
-solution *sol = new NumSquarefulPerms;
+solution *sol = new KInversePairs;
 
 int main() {
     sol->check();
