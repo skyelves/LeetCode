@@ -132,8 +132,9 @@
 #include "227_BasicCalculatorII.h"
 #include "772_BasicCalculatorIII.h"
 #include "1268_suggestedProducts.h"
+#include "996_numSquarefulPerms.h"
 
-solution *sol = new SuggestedProducts;
+solution *sol = new NumSquarefulPerms;
 
 int main() {
     sol->check();
