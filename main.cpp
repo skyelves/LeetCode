@@ -135,8 +135,9 @@
 #include "996_numSquarefulPerms.h"
 #include "629_kInversePairs.h"
 #include "1658_minOperationsToReduceXToZero.h"
+#include "277_findCelebrity.h"
 
-solution *sol = new MinOperationsToReduceXToZero;
+solution *sol = new FindCelebrity;
 
 int main() {
     sol->check();
