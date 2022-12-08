@@ -134,8 +134,9 @@
 #include "1268_suggestedProducts.h"
 #include "996_numSquarefulPerms.h"
 #include "629_kInversePairs.h"
+#include "1658_minOperationsToReduceXToZero.h"
 
-solution *sol = new KInversePairs;
+solution *sol = new MinOperationsToReduceXToZero;
 
 int main() {
     sol->check();
