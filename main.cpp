@@ -136,8 +136,9 @@
 #include "629_kInversePairs.h"
 #include "1658_minOperationsToReduceXToZero.h"
 #include "277_findCelebrity.h"
+#include "273_numberToWords.h"
 
-solution *sol = new FindCelebrity;
+solution *sol = new NumberToWords;
 
 int main() {
     sol->check();
