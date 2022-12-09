@@ -137,8 +137,9 @@
 #include "1658_minOperationsToReduceXToZero.h"
 #include "277_findCelebrity.h"
 #include "273_numberToWords.h"
+#include "1473_PaintHouseIII.h"
 
-solution *sol = new NumberToWords;
+solution *sol = new PaintHouseIII;
 
 int main() {
     sol->check();
