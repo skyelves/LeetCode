@@ -139,8 +139,9 @@
 #include "273_numberToWords.h"
 #include "1473_PaintHouseIII.h"
 #include "1144_movesToMakeZigzag.h"
+#include "759_employeeFreeTime.h"
 
-solution *sol = new MovesToMakeZigzag;
+solution *sol = new EmployeeFreeTime;
 
 int main() {
     sol->check();
