@@ -138,8 +138,9 @@
 #include "277_findCelebrity.h"
 #include "273_numberToWords.h"
 #include "1473_PaintHouseIII.h"
+#include "1144_movesToMakeZigzag.h"
 
-solution *sol = new PaintHouseIII;
+solution *sol = new MovesToMakeZigzag;
 
 int main() {
     sol->check();
