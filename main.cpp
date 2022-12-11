@@ -140,8 +140,9 @@
 #include "1473_PaintHouseIII.h"
 #include "1144_movesToMakeZigzag.h"
 #include "759_employeeFreeTime.h"
+#include "636_exclusiveTime.h"
 
-solution *sol = new EmployeeFreeTime;
+solution *sol = new ExclusiveTime;
 
 int main() {
     sol->check();
