@@ -141,8 +141,9 @@
 #include "1144_movesToMakeZigzag.h"
 #include "759_employeeFreeTime.h"
 #include "636_exclusiveTime.h"
+#include "315_countSmaller.h"
 
-solution *sol = new ExclusiveTime;
+solution *sol = new CountSmaller;
 
 int main() {
     sol->check();
