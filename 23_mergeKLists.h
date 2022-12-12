@@ -31,25 +31,28 @@ public:
         ListNode(int x, ListNode *next) : val(x), next(next) {}
     };
 
+    struct cmp {
+        bool operator() (const pair<int, ListNode *> &a, const pair<int, ListNode *> &b) {
+            return a.first < b.first;
+        }
+    };
+
     ListNode *mergeKLists(vector<ListNode *> &lists) {
         ListNode *res = new ListNode, *curr = res;
         int n = lists.size();
-        while (1) {
-            ListNode *tmp = nullptr;
-            int tmpIdx = -1;
-            for (int i = 0; i < n; ++i) {
-                if (lists[i] != nullptr) {
-                    if (tmp == nullptr || tmp->val > lists[i]->val) {
-                        tmp = lists[i];
-                        tmpIdx = i;
-                    }
-                }
+        priority_queue<pair<int, ListNode *>, vector<pair<int, ListNode *>>, cmp> pq;
+        for (auto &node : lists) {
+            if (node != nullptr)
+                pq.push({node->val, node});
+        }
+        while (!pq.empty()) {
+            ListNode *tmp = pq.top().second;
+            pq.pop();
+            if (tmp->next != nullptr) {
+                pq.push({tmp->next->val, tmp->next});
             }
-            if (tmpIdx == -1)
-                break;
             curr->next = tmp;
-            curr = curr->next;
-            lists[tmpIdx] = tmp->next;
+            curr = tmp;
         }
 
         return res->next;
