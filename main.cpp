@@ -144,8 +144,9 @@
 #include "315_countSmaller.h"
 #include "1024_videoStitching.h"
 #include "679_judgePoint24.h"
+#include "1463_cherryPickupII.h"
 
-solution *sol = new JudgePoint24;
+solution *sol = new CherryPickupII;
 
 int main() {
     sol->check();
