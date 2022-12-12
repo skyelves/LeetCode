@@ -143,8 +143,9 @@
 #include "636_exclusiveTime.h"
 #include "315_countSmaller.h"
 #include "1024_videoStitching.h"
+#include "679_judgePoint24.h"
 
-solution *sol = new VideoStitching;
+solution *sol = new JudgePoint24;
 
 int main() {
     sol->check();
