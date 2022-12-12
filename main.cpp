@@ -142,8 +142,9 @@
 #include "759_employeeFreeTime.h"
 #include "636_exclusiveTime.h"
 #include "315_countSmaller.h"
+#include "1024_videoStitching.h"
 
-solution *sol = new CountSmaller;
+solution *sol = new VideoStitching;
 
 int main() {
     sol->check();
