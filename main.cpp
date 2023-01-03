@@ -145,8 +145,9 @@
 #include "1024_videoStitching.h"
 #include "679_judgePoint24.h"
 #include "1463_cherryPickupII.h"
+#include "7_ReverseInteger.h"
 
-solution *sol = new CherryPickupII;
+solution *sol = new ReverseInteger;
 
 int main() {
     sol->check();
