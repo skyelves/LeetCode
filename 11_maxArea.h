@@ -9,31 +9,14 @@
 
 class MaxArea : public solution {
 public:
-    int calArea(vector<int> &height, int i) {
-        int res = 0;
-        int h = height[i];
-        int len = height.size();
-        for (int j = len - 1; j > i; --j) {
-            if (height[j] >= h) {
-                res += h * (j - i);
-                break;
-            }
-        }
-        for (int j = 0; j < i; ++j) {
-            if (height[j] >= h) {
-                res += h * (i - j);
-                break;
-            }
-        }
-        return res;
-    }
-
     int maxArea(vector<int> &height) {
-        int res = 0;
-        int len = height.size();
-        for (int i = 0; i < len; ++i) {
-            int tmp = calArea(height, i);
-            res = max(res, tmp);
+        int res = 0, l = 0, r = height.size() - 1;
+        while(l < r) {
+            res = max(res, (r - l) * min(height[l], height[r]));
+            if (height[l] < height[r])
+                ++l;
+            else
+                --r;
         }
         return res;
     }
