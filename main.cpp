@@ -146,8 +146,9 @@
 #include "679_judgePoint24.h"
 #include "1463_cherryPickupII.h"
 #include "7_ReverseInteger.h"
+#include "218_getSkyline.h"
 
-solution *sol = new ReverseInteger;
+solution *sol = new GetSkyline;
 
 int main() {
     sol->check();
