@@ -147,8 +147,9 @@
 #include "1463_cherryPickupII.h"
 #include "7_ReverseInteger.h"
 #include "218_getSkyline.h"
+#include "168_excelSheet.h"
 
-solution *sol = new GetSkyline;
+solution *sol = new ExcelSheet;
 
 int main() {
     sol->check();
