@@ -148,8 +148,9 @@
 #include "7_ReverseInteger.h"
 #include "218_getSkyline.h"
 #include "168_excelSheet.h"
+#include "767_reorganizeString.h"
 
-solution *sol = new ExcelSheet;
+solution *sol = new ReorganizeString;
 
 int main() {
     sol->check();
