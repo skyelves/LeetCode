@@ -149,8 +149,9 @@
 #include "218_getSkyline.h"
 #include "168_excelSheet.h"
 #include "767_reorganizeString.h"
+#include "68_textJustification.h"
 
-solution *sol = new ReorganizeString;
+solution *sol = new TextJustification;
 
 int main() {
     sol->check();
