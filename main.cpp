@@ -151,8 +151,9 @@
 #include "767_reorganizeString.h"
 #include "68_textJustification.h"
 #include "97_interleavingString.h"
+#include "646_maximumLengthOfPairChain.h"
 
-solution *sol = new InterLeavingString;
+solution *sol = new MaximumLengthOfPairChain;
 
 int main() {
     sol->check();
