@@ -150,8 +150,9 @@
 #include "168_excelSheet.h"
 #include "767_reorganizeString.h"
 #include "68_textJustification.h"
+#include "97_interleavingString.h"
 
-solution *sol = new TextJustification;
+solution *sol = new InterLeavingString;
 
 int main() {
     sol->check();
