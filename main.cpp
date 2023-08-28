@@ -152,8 +152,9 @@
 #include "68_textJustification.h"
 #include "97_interleavingString.h"
 #include "646_maximumLengthOfPairChain.h"
+#include "403_frogJump.h"
 
-solution *sol = new MaximumLengthOfPairChain;
+solution *sol = new FrogJump;
 
 int main() {
     sol->check();
