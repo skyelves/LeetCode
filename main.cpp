@@ -154,7 +154,7 @@
 #include "646_maximumLengthOfPairChain.h"
 #include "403_frogJump.h"
 
-solution *sol = new FrogJump;
+solution *sol = new MinTaps;
 
 int main() {
     sol->check();
