@@ -153,8 +153,9 @@
 #include "97_interleavingString.h"
 #include "646_maximumLengthOfPairChain.h"
 #include "403_frogJump.h"
+#include "959_regionsCutBySlashes.h"
 
-solution *sol = new MinTaps;
+solution *sol = new RegionsCutBySlashes;
 
 int main() {
     sol->check();
