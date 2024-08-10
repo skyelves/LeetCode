@@ -22,6 +22,8 @@
 #include <semaphore.h>
 #include <mutex>
 #include <pthread.h>
+#include <bitset>
+#include <cmath>
 
 using namespace std;
 
