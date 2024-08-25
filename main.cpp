@@ -154,8 +154,9 @@
 #include "646_maximumLengthOfPairChain.h"
 #include "403_frogJump.h"
 #include "959_regionsCutBySlashes.h"
+#include "564_NearestPalindrome.h"
 
-solution *sol = new RegionsCutBySlashes;
+solution *sol = new NearestPalindromic;
 
 int main() {
     sol->check();
