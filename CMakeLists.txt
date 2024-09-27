@@ -28,4 +28,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         1568_disconnectIsland.h
         564_NearestPalindrome.h
         199_BinaryTreeRightSideView.h
-        1541_MinimumInsertionsToBalanceParenthesesString.h)
+        1541_MinimumInsertionsToBalanceParenthesesString.h
+        680_ValidPalindromeII.h)
