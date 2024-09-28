@@ -39,7 +39,6 @@ public:
 
     ListNode *mergeKLists(vector<ListNode *> &lists) {
         ListNode *res = new ListNode, *curr = res;
-        int n = lists.size();
         priority_queue<pair<int, ListNode *>, vector<pair<int, ListNode *>>, cmp> pq;
         for (auto &node : lists) {
             if (node != nullptr)
