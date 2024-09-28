@@ -10,31 +10,20 @@
 class ValidParentheses : public solution {
 public:
     bool isValid(string s) {
-        stack<char> ss;
-        for (auto &c : s) {
-            if (c == ')') {
-                if (!ss.empty() && ss.top() == '(') {
-                    ss.pop();
-                } else {
-                    return false;
-                }
-            } else if (c == ']') {
-                if (!ss.empty() && ss.top() == '[') {
-                    ss.pop();
-                } else {
-                    return false;
-                }
-            } else if (c == '}') {
-                if (!ss.empty() && ss.top() == '{') {
-                    ss.pop();
-                } else {
-                    return false;
-                }
+        stack<char> bracketStack;
+        map<char, char> close2OpenMap{{')', '('}, {']', '['}, {'}', '{'}};
+        for (char c : s) {
+            if (c == '(' || c == '{' || c == '[') {
+                bracketStack.push(c);
             } else {
-                ss.push(c);
+                if (!bracketStack.empty() && bracketStack.top() == close2OpenMap[c]) {
+                    bracketStack.pop();
+                } else {
+                    return false;
+                }
             }
         }
-        return ss.empty();
+        return bracketStack.empty();
     }
 };
 
