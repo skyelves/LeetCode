@@ -30,4 +30,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         199_BinaryTreeRightSideView.h
         1541_MinimumInsertionsToBalanceParenthesesString.h
         680_ValidPalindromeII.h
-        31_NextPermutation.h)
+        31_NextPermutation.h
+        50_Pow.h)
