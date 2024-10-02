@@ -40,6 +40,24 @@ public:
             cout << i << endl;
         }
     }
+
+    vector<string> wordBreak1(string s, vector<string>& wordDict) {
+        vector<string> res;
+        for (string &word : wordDict) {
+            if (word == s.substr(0, word.size())) {
+                if (s.length() == word.length()) {
+                    res.push_back(word);
+                } else {
+                    vector<string> nextRes = wordBreak1(s.substr(word.length(), s.length()), wordDict);
+                    for (string &s: nextRes) {
+                        res.push_back(word + " " + s);
+                    }
+                }
+            }
+        }
+
+        return res;
+    }
 };
 
 #endif //LEETCODE_140_WORDBREAK_H
