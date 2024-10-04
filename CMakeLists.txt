@@ -40,4 +40,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         339_NestedListWeightSum.h
         340_LongestSubstrring.h
         408_ValidWordAbbreviation.h
-        426_ConvertBinarySearchTreeToSortedDoublyLinkedList.h)
+        426_ConvertBinarySearchTreeToSortedDoublyLinkedList.h
+        498_DiagnolTraverse.h)
