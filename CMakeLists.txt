@@ -38,4 +38,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         269_AlienDictionary.h
         296_BestMeetingPoint.h
         339_NestedListWeightSum.h
-        340_LongestSubstrring.h)
+        340_LongestSubstrring.h
+        408_ValidWordAbbreviation.h)
