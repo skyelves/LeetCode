@@ -47,4 +47,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         70_ClimbingStairs.h
         752_OpenTheLock.h
         766_ToeplitzMatrix.h
-        791_CustomSortString.h)
+        791_CustomSortString.h
+        938_RangeSumOfBST.h)
