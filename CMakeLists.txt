@@ -51,4 +51,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         938_RangeSumOfBST.h
         1013_PartitionArray.h
         1216_ValidPalindromeIII.h
-        1539_KthMissingPositiveNumber.h)
+        1539_KthMissingPositiveNumber.h
+        415_AddStrings.h)
