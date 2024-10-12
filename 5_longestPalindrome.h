@@ -9,38 +9,48 @@
 
 class LongestPalindrome : public solution {
 public:
-    pair<int, int> expand(string &s, int l, int r) {
-        int len = s.size();
-        while (l >= 0 && r < len && s[l] == s[r]) {
-            l--;
-            r++;
-        }
-        return {l + 1, r - 1};
-    }
-
     string longestPalindrome(string s) {
-        int res_l = 0, res_len = 0;
-        int len = s.size();
-        for (int i = 0; i < len - 1; ++i) {
-            auto tmp1 = expand(s, i, i);
-            auto tmp2 = expand(s, i, i + 1);
-            int len1 = tmp1.second - tmp1.first;
-            int len2 = tmp2.second - tmp2.first;
-            if (len1 >= len2 && len1 > res_len) {
-                res_l = tmp1.first;
-                res_len = len1;
-            } else if (len2 > len1 && len2 > res_len) {
-                res_l = tmp2.first;
-                res_len = len2;
+        int n = s.size(), l = 0, r = 0;
+        string res = s.substr(0, 1);
+        vector<int> d1(n, 1), d2(n, 0);
+        for (int i = 1; i < n; ++i) {
+            int j = i >= r ? 1 : min(d1[l + r - i], r - i - 1);
+            while (i + j < n && i - j >= 0 && s[i + j] == s[i - j]) {
+                ++j;
+            }
+            d1[i] = j;
+            if (i + j - 1 > r) {
+                r = i + j - 1;
+                l = i - j + 1;
+            }
+            if (2 * j - 1 > res.size()) {
+                res = s.substr(i - j + 1, 2 * j - 1);
             }
         }
-        return s.substr(res_l, res_len + 1);
+
+        l = 0, r = 0;
+        for (int i = 1; i < n; ++i) {
+            int j = i >= r ? 0 : min(d2[l + r - i + 1], r - i - 1);
+            while (i + j < n && i - 1 - j >= 0 && s[i + j] == s[i - 1 - j]) {
+                ++j;
+            }
+            d2[i] = j;
+            if (i + j - 1 > r) {
+                r = i + j - 1;
+                l = i - j ;
+            }
+            if (2 * j > res.size()) {
+                res = s.substr(i - j, 2 * j);
+            }
+        }
+
+        return res;
     }
 
     void check() {
-        string s = "babad";
+        string s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         string res = longestPalindrome(s);
-        cout << res << endl;
+        cout << res.size() << ": " << res << endl;
     }
 };
 
