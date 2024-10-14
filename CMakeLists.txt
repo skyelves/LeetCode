@@ -54,4 +54,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         1539_KthMissingPositiveNumber.h
         415_AddStrings.h
         8_StringToInteger.h
-        1334_FindTheCityWithSmallestNeighborsAtThreshold.h)
+        1334_FindTheCityWithSmallestNeighborsAtThreshold.h
+        71_SimplifyPath.h)
