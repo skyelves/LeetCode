@@ -57,4 +57,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         1334_FindTheCityWithSmallestNeighborsAtThreshold.h
         71_SimplifyPath.h
         133_CloneGraph.h
-        138_CopyListWithRandomPointer.h)
+        138_CopyListWithRandomPointer.h
+        139_WordBreak.h)
