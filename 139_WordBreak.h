@@ -11,19 +11,19 @@ class WordBreak : public solution {
     vector<int> visited;
 
 public:
-    bool wordBreak(string s, vector<string>& wordDict) {
+    bool wordBreak(string s, vector<string> &wordDict) {
         visited.resize(s.size(), -1);
         return dfs(s, wordDict, 0);
     }
 
-    bool dfs(string &s, vector<string>& wordDict, int idx) {
-        if(idx == s.size()) {
+    bool dfs(string &s, vector<string> &wordDict, int idx) {
+        if (idx == s.size()) {
             return true;
         }
         if (visited[idx] != -1) {
             return visited[idx];
         }
-        for(string &word: wordDict) {
+        for (string &word: wordDict) {
             if (word == s.substr(idx, word.size())) {
                 if (dfs(s, wordDict, idx + word.size())) {
                     visited[idx] = 1;
