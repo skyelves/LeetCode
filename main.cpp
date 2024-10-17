@@ -155,8 +155,18 @@
 #include "403_frogJump.h"
 #include "959_regionsCutBySlashes.h"
 #include "564_NearestPalindrome.h"
+#include "1541_MinimumInsertionsToBalanceParenthesesString.h"
+#include "680_ValidPalindromeII.h"
+#include "31_NextPermutation.h"
+#include "50_Pow.h"
+#include "269_AlienDictionary.h"
+#include "340_LongestSubstrring.h"
+#include "408_ValidWordAbbreviation.h"
+#include "498_DiagnolTraverse.h"
+#include "1216_ValidPalindromeIII.h"
+#include "1334_FindTheCityWithSmallestNeighborsAtThreshold.h"
 
-solution *sol = new NearestPalindromic;
+solution *sol = new BasicCaculatorIII;
 
 int main() {
     sol->check();
