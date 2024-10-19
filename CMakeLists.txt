@@ -60,4 +60,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         138_CopyListWithRandomPointer.h
         139_WordBreak.h
         1762_BuildingsWithAnOceanView.h
-        1570_DotProductOfSparseVectors.h)
+        1570_DotProductOfSparseVectors.h
+        3321_FindXSumofALLKLongSubarraysII.h)
