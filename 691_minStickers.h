@@ -9,89 +9,73 @@
 
 class MinStickers : public solution {
 public:
-    vector<vector<int>> sbags;
-    int sbag_len;
-    int stickersNum = 0;
-    int minS;
+    unordered_map<string, int> minCnt;
+    vector<unordered_set<string>> reverseMap;
 
-    void dfs(vector<int> &target, int start = 0, int curr = 0) {
-        if (curr + 1 >= minS)
-            return;
-        for (; start < sbag_len; ++start) {
-            if (target[start] > 0)
-                break;
-        }
-        for (int j = 0; j < stickersNum; ++j) {
-            if (sbags[j][start] > 0) {
-                vector<int> tmp = target;
-                bool flag = true;
-                for (int k = start; k < sbag_len; ++k) {
-                    tmp[k] = max(0, tmp[k] - sbags[j][k]);
-                    if (tmp[k] != 0) {
-                        flag = false;
-                    }
-                }
-                if (flag) {
-                    minS = min(minS, curr + 1);
-                    return;
-                }
-                dfs(tmp, start, curr + 1);
+    int minStickers(vector<string>& stickers, string target) {
+        reverseMap.resize(26);
+        for (int i = 0; i < stickers.size(); ++i) {
+            sort(stickers[i].begin(), stickers[i].end());
+            for (int j = 0; j < stickers[i].size(); ++j) {
+                reverseMap[stickers[i][j] - 'a'].insert(stickers[i]);
             }
         }
+        sort(target.begin(), target.end());
+        return dfs(target);
     }
 
-    int minStickers(vector<string> &stickers, string target) {
-        bool stickersContains[26] = {false};
-        map<int, int> mm;
-        vector<int> t;
+    int dfs(string target) {
+        if (target.empty()) {
+            return 0;
+        }
+        if (minCnt.find(target) != minCnt.end()) {
+            return minCnt[target];
+        }
+        int res = INT32_MAX;
         for (int i = 0; i < target.size(); ++i) {
-            if (mm.find(target[i] - 'a') != mm.end())
-                mm[target[i] - 'a']++;
-            else
-                mm[target[i] - 'a'] = 1;
-        }
-        for (auto i: mm) {
-            t.push_back(i.second);
-        }
-        sbag_len = t.size();
-
-        stickersNum = stickers.size();
-        for (int i = 0; i < stickersNum; ++i) {
-            vector<int> tmp;
-            map<int, int> tmp_mm;
-            int tmpLen = stickers[i].size();
-            for (int j = 0; j < tmpLen; ++j) {
-                stickersContains[stickers[i][j] - 'a'] = true;
-                if (tmp_mm.find(stickers[i][j] - 'a') != tmp_mm.end())
-                    tmp_mm[stickers[i][j] - 'a']++;
-                else
-                    tmp_mm[stickers[i][j] - 'a'] = 1;
-            }
-            for (auto j : mm) {
-                auto iter = tmp_mm.find(j.first);
-                if (iter != tmp_mm.end())
-                    tmp.push_back(iter->second);
-                else
-                    tmp.push_back(0);
-            }
-            sbags.push_back(tmp);
-        }
-        for (auto i : mm) {
-            if (!stickersContains[i.first])
+            if (reverseMap[target[i] - 'a'].empty()) {
+                minCnt[target] = -1;
                 return -1;
+            }
+            for (const string &sticker : reverseMap[target[i] - 'a']) {
+                string newTarget = deduct(target, sticker);
+                res = min(res, dfs(newTarget));
+            }
         }
-        minS = 16;
-        dfs(t);
-        return minS == 16 ? -1 : minS;
+
+        if (res == INT32_MAX) {
+            minCnt[target] = -1;
+            return -1;
+        }
+        ++res;
+        minCnt[target] = res;
+        return res;
+    }
+
+    string deduct(string &target, const string &sticker) {
+        string res;
+        int i = 0, j = 0;
+        while(i < target.size() && j < sticker.size()) {
+            if (target[i] == sticker[j]) {
+                ++i;
+                ++j;
+            } else if (target[i] < sticker[j]) {
+                res.push_back(target[i]);
+                ++i;
+            } else {
+                ++j;
+            }
+        }
+        while(i < target.size()) {
+            res.push_back(target[i]);
+            ++i;
+        }
+        return res;
     }
 
     void check() {
-        vector<string> stickers{"heart", "seven", "consider", "just", "less", "back", "an", "four", "cost", "kill",
-                                "skin", "happen", "depend", "broad", "caught", "fast", "fig", "way", "under", "print",
-                                "white", "war", "sent", "locate", "be", "noise", "door", "get", "burn", "quite",
-                                "eight", "press", "eye", "wave", "bread", "wont", "short", "cow", "plain", "who",
-                                "well", "drive", "fact", "chief", "store", "night", "operate", "page", "south", "once"};
-        string target = "simpleexample";
+        vector<string> stickers{"notice","possible"};
+        string target = "basicbasic";
         int res = minStickers(stickers, target);
         cout << res << endl;
     }
