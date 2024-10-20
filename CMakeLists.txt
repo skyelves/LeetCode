@@ -66,4 +66,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         65_ValidNumber.h
         0_Contest.h
         3327_CheckIfDfsStringsArePalindromes.h
-        973_KClosestPointsToOrigin.h)
+        973_KClosestPointsToOrigin.h
+        1091_ShortestPathInBinaryMatrix.h)
