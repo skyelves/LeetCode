@@ -63,4 +63,6 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         1570_DotProductOfSparseVectors.h
         3321_FindXSumofALLKLongSubarraysII.h
         346_MovingAverage.h
-        65_ValidNumber.h)
+        65_ValidNumber.h
+        0_Contest.h
+        3327_CheckIfDfsStringsArePalindromes.h)
