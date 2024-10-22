@@ -9,45 +9,54 @@
 
 class LRUCache {
 public:
-    list<int> l;
-    int n;
-    unordered_map<int, list<int>::iterator> mm;
-    unordered_map<int, int> kv;
+    map<int, list<pair<int, int> >::iterator > iterMap;
+    list<pair<int, int> > lru;
+    int _cap;
 
     LRUCache(int capacity) {
-        n = capacity;
+        _cap = capacity;
     }
 
     int get(int key) {
-        auto iter = mm.find(key);
-        if (iter != mm.end()) {
-            int value = kv[key];
-            l.push_front(key);
-            l.erase(iter->second);
-            iter->second = l.begin();
+        auto iter = iterMap.find(key);
+        if (iter != iterMap.end()) {
+            int value = iter->second->second;
+            prioritize(key, value);
             return value;
-        } else {
-            return -1;
         }
+        return -1;
     }
 
     void put(int key, int value) {
-        auto iter = mm.find(key);
-        if (iter == mm.end()) {
-            if (mm.size() == n) {
-                kv.erase(l.back());
-                mm.erase(l.back());
-                l.pop_back();
-            }
-            kv[key] = value;
-            l.push_front(key);
-            mm.insert({key, l.begin()});
-        } else {
-            kv[key] = value;
-            l.push_front(key);
-            l.erase(iter->second);
-            iter->second = l.begin();
+        if (iterMap.find(key) != iterMap.end()) {
+            prioritize(key, value);
         }
+        else {
+            if (iterMap.size() < _cap) {
+                pushFront(key, value);
+            } else {
+                replace(key, value);
+            }
+        }
+    }
+
+    void pushFront(int key, int value) {
+        lru.emplace_front(key, value);
+        iterMap.insert({key, lru.begin()});
+    }
+
+    void prioritize(int key, int value) {
+        lru.erase(iterMap[key]);
+        lru.emplace_front(key, value);
+        iterMap[key] = lru.begin();
+    }
+
+    void replace(int key, int value) {
+        int removedKey = lru.back().first;
+        lru.pop_back();
+        iterMap.erase(removedKey);
+        lru.emplace_front(key, value);
+        iterMap[key] = lru.begin();
     }
 };
 
