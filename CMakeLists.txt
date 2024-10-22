@@ -70,4 +70,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         1091_ShortestPathInBinaryMatrix.h
         162_FindPeakElement.h
         921_MinimumAddToMakeParenthesesValid.h
-        708_InsertIntoASortedCircularLinkedList.h)
+        708_InsertIntoASortedCircularLinkedList.h
+        249_GroupShiftedGroup.h)
