@@ -73,4 +73,5 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         708_InsertIntoASortedCircularLinkedList.h
         249_GroupShiftedGroup.h
         317_ShortestDistanceFromAllBuildings.h
-        986_IntervalListIntersections.h)
+        986_IntervalListIntersections.h
+        2850_MinimumMovesToSpreadStonesOverGrid.h)
