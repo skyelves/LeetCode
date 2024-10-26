@@ -8,42 +8,38 @@
 #include "solution.h"
 
 class RemoveInvalidParentheses : public solution {
+    int maxLen = 0;
 public:
-    int maxSize = 0;
-    void dfs(int idx, int leftCnt, string &s, string curr, vector<string> &res) {
-        if (leftCnt < 0)
-            return;
-        if (s.size() - idx + curr.size() < maxSize)
-            return;
-        if (idx == s.size()) {
-            if (leftCnt == 0) {
-                maxSize = max(maxSize, (int)curr.size());
-                res.push_back(curr);
-            }
+    void dfs(string &s, int idx, int cnt, string tmp, unordered_set<string> &resS) {
+        if (idx == s.size() && cnt == 0) {
+            resS.insert(tmp);
+            maxLen = max(maxLen, (int)tmp.size());
             return;
         }
-        if (s[idx] == ')') {
-            dfs(idx + 1, leftCnt - 1, s, curr + ")", res);
-            dfs(idx + 1, leftCnt, s, curr, res);
-        } else if (s[idx] == '(') {
-            dfs(idx + 1, leftCnt + 1, s, curr + "(", res);
-            dfs(idx + 1, leftCnt, s, curr, res);
+        if (cnt < 0 || idx + cnt > s.size() || tmp.size() + s.size() - idx < maxLen) {
+            return;
+        }
+        if (s[idx] == '(') {
+            dfs(s, idx + 1, cnt + 1, tmp + "(", resS);
+            dfs(s, idx + 1, cnt, tmp, resS);
+        } else if (s[idx] == ')') {
+            if (cnt > 0) {
+                dfs(s, idx + 1, cnt - 1, tmp + ")", resS);
+            }
+            dfs(s, idx + 1, cnt, tmp, resS);
         } else {
-            dfs(idx + 1, leftCnt, s, curr + s[idx], res);
+            dfs(s, idx + 1, cnt, tmp + s[idx], resS);
         }
     }
 
     vector<string> removeInvalidParentheses(string s) {
-        vector<string> tmpRes, res;
-        dfs(0, 0, s, "", tmpRes);
-        set<string> ss;
-        for (auto &i : tmpRes) {
-            if (i.size() == maxSize) {
-                ss.insert(i);
+        unordered_set<string> resS;
+        dfs(s, 0, 0, "", resS);
+        vector<string> res;
+        for (auto &tmp : resS) {
+            if (tmp.size() == maxLen) {
+                res.push_back(tmp);
             }
-        }
-        for (auto &i : ss){
-            res.push_back(i);
         }
         return res;
     }
