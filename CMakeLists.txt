@@ -74,4 +74,7 @@ add_executable(Leetcode main.cpp solution.h 1_twoSum.h 2_addTwoNumbers.h 1021_re
         249_GroupShiftedGroup.h
         317_ShortestDistanceFromAllBuildings.h
         986_IntervalListIntersections.h
-        2850_MinimumMovesToSpreadStonesOverGrid.h)
+        2850_MinimumMovesToSpreadStonesOverGrid.h
+        309_BestTimeToBuyAndSellStockWithCooldown.h
+        123_BestTimeToBuyAndSellStockIII.h
+        188_BestTimeToBuyAndSellStockIV.h)
