@@ -10,23 +10,19 @@
 class ValidPalindromeIII : public solution {
 public:
     bool isValidPalindrome(string s, int k) {
-        vector<vector<int>> deleteCnt(s.size() + 1, vector<int>(s.size() + 1, -1));
-        return dfs(s, 0, s.size() - 1, deleteCnt) <= k;
-    }
-
-    int dfs(string &s, int start, int end, vector<vector<int>> &deletCnt) {
-        if (start >= end) {
-            return 0;
+        vector<vector<int>> dp(s.size(), vector<int>(s.size() + 1, 0));
+        for (int len = 2; len <= s.size(); ++len) {
+            for (int i = 0; i + len - 1 < s.size(); ++i) {
+                int tmp = 1e5;
+                if (s[i] == s[i + len - 1]) {
+                    tmp = dp[i + 1][len - 2];
+                }
+                tmp = min(tmp, dp[i][len - 1] + 1);
+                tmp = min(tmp, dp[i + 1][len - 1] + 1);
+                dp[i][len] = tmp;
+            }
         }
-        if (deletCnt[start][end] != -1) {
-            return deletCnt[start][end];
-        }
-        if (s[start] == s[end]) {
-            deletCnt[start][end] = dfs(s, start + 1, end - 1, deletCnt);
-        } else {
-            deletCnt[start][end] = min(dfs(s, start + 1, end, deletCnt), dfs(s, start, end - 1, deletCnt)) + 1;
-        }
-        return deletCnt[start][end];
+        return dp[0][s.size()] <= k;
     }
 
     void check() {
