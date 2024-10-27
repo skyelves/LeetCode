@@ -9,44 +9,44 @@
 
 class ExclusiveTime : public solution {
 public:
-    vector<int> split(string &s) {
-        // timestamp, id, start
-        int id = 0, timestamp = 0, start = 0;
-        int idx = s.find(':');
-        id = stoi(s.substr(0, idx));
-        if (s[idx + 1] == 's') {
-            start = 1;
-            idx += 7;
-        } else {
-            start = 0;
-            idx += 5;
-        }
-        timestamp = stoi(s.substr(idx, s.size() - idx));
 
-        return {timestamp, id, start};
+    int getNum(string &log, int &i) {
+        int num = 0;
+        while(log[i] >= '0' && log[i] <= '9') {
+            num *= 10;
+            num += log[i] - '0';
+            ++i;
+        }
+        return num;
     }
 
     vector<int> exclusiveTime(int n, vector<string> &logs) {
         vector<int> res(n, 0);
-        vector<vector<int>> l;
-        for (auto &log : logs) {
-            auto tmp = split(log);
-            l.emplace_back(tmp);
-        }
-        stack<int> ss;
-        int lastTime = 0;
-        for (int i = 0; i < l.size(); ++i) {
-            auto &tmp = l[i];
-            if (tmp[2]) {
-                if (!ss.empty()) {
-                    res[ss.top()] += tmp[0] - lastTime;
-                }
-                ss.push(tmp[1]);
-                lastTime = tmp[0];
+        stack<vector<int>> ss;
+        for (string &log : logs) {
+            int i = 0;
+            int id = getNum(log, i);
+            i += 1;
+            bool isStart = log[i] == 's';
+            if (isStart) {
+                i += 6;
             } else {
-                res[ss.top()] += tmp[0] - lastTime + 1;
+                i += 4;
+            }
+            int timestamp = getNum(log, i);
+
+            if (isStart) {
+                ss.push({id, timestamp, 0});
+            } else {
+                auto top = ss.top();
                 ss.pop();
-                lastTime = tmp[0] + 1;
+                res[id] += timestamp - top[1] - top[2] + 1;
+                if (!ss.empty()) {
+                    auto newTop = ss.top();
+                    ss.pop();
+                    newTop[2] += timestamp - top[1] + 1;
+                    ss.push(newTop);
+                }
             }
         }
 
@@ -54,9 +54,8 @@ public:
     }
 
     void check() {
-        int n = 3;
-        vector<string> logs{"0:start:0", "0:end:0", "1:start:1", "1:end:1", "2:start:2", "2:end:2", "2:start:3",
-                            "2:end:3"};
+        int n = 2;
+        vector<string> logs{"0:start:0","1:start:2","1:end:5","0:end:6"};
         vector<int> res = exclusiveTime(n, logs);
         for (int i = 0; i < n; ++i) {
             cout << res[i] << endl;
