@@ -10,19 +10,32 @@
 class ValidPalindromeIII : public solution {
 public:
     bool isValidPalindrome(string s, int k) {
-        vector<vector<int>> dp(s.size(), vector<int>(s.size() + 1, 0));
-        for (int len = 2; len <= s.size(); ++len) {
-            for (int i = 0; i + len - 1 < s.size(); ++i) {
-                int tmp = 1e5;
-                if (s[i] == s[i + len - 1]) {
-                    tmp = dp[i + 1][len - 2];
-                }
-                tmp = min(tmp, dp[i][len - 1] + 1);
-                tmp = min(tmp, dp[i + 1][len - 1] + 1);
-                dp[i][len] = tmp;
+        int n = s.size();
+        vector<vector<int>> remove(n, vector<int>(n, -1));
+        return dfs(0, n - 1, s, remove) <= k;
+    }
+
+    int dfs(int x, int y, string &s, vector<vector<int>> &remove) {
+        int i = x, j = y;
+        if (i >= j) {
+            return 0;
+        }
+        if (remove[i][j] != -1) {
+            return remove[i][j];
+        }
+        while (i < j) {
+            if (s[i] == s[j]) {
+                ++i;
+                --j;
+            } else {
+                int removeLeft = dfs(i + 1, j, s, remove) + 1;
+                int removeRight = dfs(i, j - 1, s, remove) + 1;
+                remove[x][y] = min(removeLeft, removeRight);
+                return remove[x][y];
             }
         }
-        return dp[0][s.size()] <= k;
+        remove[x][y] = 0;
+        return 0;
     }
 
     void check() {
