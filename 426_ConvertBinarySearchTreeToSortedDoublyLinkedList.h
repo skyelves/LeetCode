@@ -33,27 +33,33 @@ public:
         if (root == nullptr) {
             return nullptr;
         }
-        pair<Node*, Node*> resPair = convert(root);
-        resPair.first->left = resPair.second;
-        resPair.second->right = resPair.first;
-        return resPair.first;
+        auto [leftmost, rightmost] = toDoublyList(root);
+        leftmost->left = rightmost;
+        rightmost->right = leftmost;
+        return leftmost;
     }
 
-    pair<Node*, Node*> convert(Node *root) {
-        pair<Node*, Node*> leftBranch, rightBranch, res{root, root};
+    pair<Node*, Node*> toDoublyList(Node* root) {
+        Node *leftmost = root, *left = root, *rightmost = root, *right = root;
         if (root->left != nullptr) {
-            leftBranch = convert(root->left);
-            leftBranch.second->right = root;
-            root->left = leftBranch.second;
-            res.first = leftBranch.first;
+            auto tmp = toDoublyList(root->left);
+            leftmost = tmp.first;
+            left = tmp.second;
+            left->right = root;
+            root->left = left;
         }
         if (root->right != nullptr) {
-            rightBranch = convert(root->right);
-            rightBranch.first->left = root;
-            root->right = rightBranch.first;
-            res.second = rightBranch.second;
+            auto tmp = toDoublyList(root->right);
+            right = tmp.first;
+            rightmost = tmp.second;
+            right->left = root;
+            root->right = right;
         }
-        return res;
+
+        leftmost->left = rightmost;
+        rightmost->right = leftmost;
+
+        return {leftmost, rightmost};
     }
 };
 
