@@ -28,39 +28,36 @@ private:
     };
 
 public:
+    void insertNode(Node *curr, Node *next, Node *new_node) {
+        curr->next = new_node;
+        new_node->next = next;
+    }
+
     Node* insert(Node* head, int insertVal) {
-        Node *res = new Node(insertVal);
+        Node *new_node = new Node(insertVal);
         if (head == nullptr) {
-            res->next = res;
-            return res;
+            new_node->next = new_node;
+            return new_node;
         }
-        Node *tmp = head, *nextNode = head->next;
-        bool flag = true;
-        do {
-            if (nextNode->val >= tmp->val) {
-                if (tmp->val <= insertVal && insertVal <= nextNode->val) {
-                    tmp->next = res;
-                    res->next = nextNode;
-                    flag = false;
-                    break;
+        Node *curr = head, *next = curr->next;
+        while (next != head) {
+            if (next->val >= curr->val) {
+                if (curr->val <= insertVal && next->val >= insertVal) {
+                    curr->next = new_node;
+                    insertNode(curr, next, new_node);
+                    return head;
                 }
             } else {
-                // nextNode->val < tmp->val: reaching the end of the list
-                if (insertVal <= nextNode->val || insertVal >= tmp->val) {
-                    tmp->next = res;
-                    res->next = nextNode;
-                    flag = false;
-                    break;
+                // next->val < curr->val
+                if (insertVal >= curr->val || insertVal < next->val) {
+                    insertNode(curr, next, new_node);
+                    return head;
                 }
             }
-            nextNode = nextNode->next;
-            tmp = tmp->next;
-        } while (tmp != head);
-        if (flag) {
-            tmp->next = res;
-            res->next = nextNode;
+            curr = next;
+            next = next->next;
         }
-
+        insertNode(curr, next, new_node);
         return head;
     }
 };
