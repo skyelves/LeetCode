@@ -24,23 +24,22 @@ public:
         if (digits.empty()) {
             return {};
         }
-        vector<string> res;
-        string curr = chars[digits[0]];
-        vector<string> nextRes = move(letterCombinations(digits.substr(1)));
-        if (nextRes.empty()) {
-            for (int i = 0; i < curr.size(); ++i) {
-                res.push_back({curr[i]});
-            }
-            return res;
-        }
-        for (int i = 0; i < curr.size(); ++i) {
-            for (string &tmp : nextRes) {
-                res.push_back(curr[i] + tmp);
-            }
-        }
+        vector<string> res = {};
+        string comb(digits.size(), '0');
+        dfs(0, comb, digits, res);
         return res;
     }
 
+    void dfs(int idx, string &comb, string &digits, vector<string> &res) {
+        if (idx == digits.size()) {
+            res.push_back(comb);
+        }
+        string curr = chars[digits[idx]];
+        for (char c : curr) {
+            comb[idx] = c;
+            dfs(idx + 1, comb, digits, res);
+        }
+    }
 
     void check() {
         string digits = "23";
