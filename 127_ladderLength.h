@@ -9,88 +9,66 @@
 
 class LadderLength : public solution {
 public:
-    int **edge;
-    int *dis;
-    queue<int> qq;
+    bool isAdjacent(string &s1, string &s2) {
+        int diff = 0;
+        for (int i = 0; i < s1.size(); ++i) {
+            if (s1[i] != s2[i]) {
+                ++diff;
+            }
+        }
+        return diff == 1;
+    }
 
-    int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
-        int wordLen = beginWord.size();
-        int res = 0;
-        int len = wordList.size();
-        int beginIdx = -1, endIdx = -1;
-        for (int i = 0; i < len; ++i) {
-            if (wordList[i] == beginWord) {
-                beginIdx = i;
-                break;
-            }
-        }
-        if (beginIdx == -1) {
-            beginIdx = wordList.size();
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+        int begin = findWord(beginWord, wordList);
+        if (begin == -1) {
             wordList.push_back(beginWord);
+            begin = wordList.size() - 1;
         }
-        for (int i = 0; i < len; ++i) {
-            if (wordList[i] == endWord) {
-                endIdx = i;
-                break;
-            }
-        }
-        if (endIdx == -1) {
+        int end = findWord(endWord, wordList);
+        if (end == -1) {
             return 0;
         }
-        len = wordList.size();
-        dis = new int[len];
-        edge = new int *[len];
-        for (int i = 0; i < len; ++i) {
-            edge[i] = new int[len];
-            memset(edge[i], 0, sizeof(int) * len);
+        int n = wordList.size();
+        unordered_map<int, vector<int>> edge;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (isAdjacent(wordList[i], wordList[j])) {
+                    edge[i].push_back(j);
+                    edge[j].push_back(i);
+                }
+            }
         }
-        for (int i = 0; i < len; ++i) {
-            for (int j = i + 1; j < len; ++j) {
-                int diffCnt = 0;
-                for (int k = 0; k < wordLen; ++k) {
-                    if (wordList[i][k] != wordList[j][k]) {
-                        diffCnt++;
+        queue<pair<int, int>> curr;
+        vector<bool> visited(n, false);
+        visited[begin] = true;
+        curr.emplace(begin, 1);
+        while (!curr.empty()) {
+            auto tmp = curr.front();
+            curr.pop();
+            for (int i : edge[tmp.first]) {
+                if (!visited[i]) {
+                    if (i == end) {
+                        return tmp.second + 1;
                     }
-                }
-                if (diffCnt == 1) {
-                    edge[i][j] = edge[j][i] = 1;
+                    visited[i] = true;
+                    curr.emplace(i, tmp.second + 1);
                 }
             }
         }
+        return 0;
+    }
 
-        bool *visited = new bool[len];
-        memset(visited, 0, sizeof(bool) * len);
-        visited[beginIdx] = true;
-        for (int i = 0; i < len; ++i) {
-            if (edge[beginIdx][i] == 1) {
-                dis[i] = 1;
-                qq.push(i);
-                visited[i] = true;
-            } else {
-                dis[i] = INT_MAX;
-            }
-        }
-        bool flag = false;
-        while (!qq.empty()) {
-            int tmpIdx = qq.front();
-            qq.pop();
-            if (tmpIdx == endIdx) {
-                flag = true;
+    int findWord(string &endWord, vector<string>& wordList) {
+        int n = wordList.size();
+        int end = -1;
+        for (int i = 0; i < n; ++i) {
+            if (endWord == wordList[i]) {
+                end = i;
                 break;
             }
-            for (int i = 0; i < len; ++i) {
-                if (edge[tmpIdx][i] == 1 && !visited[i]) {
-                    dis[i] = dis[tmpIdx] + 1;
-                    qq.push(i);
-                    visited[i] = true;
-                }
-            }
         }
-        if (flag) {
-            res = dis[endIdx] + 1;
-        }
-
-        return res;
+        return end;
     }
 
     void check() {
