@@ -10,35 +10,28 @@
 class MinRemoveToMakeValid : public solution {
 public:
     string minRemoveToMakeValid(string s) {
-        int cnt = 0;
-        string res;
-        vector<bool> remove(s.size(), false);
-        for (int i = 0; i < s.size(); ++i) {
+        int n = s.size();
+        vector<bool> removed(n, false);
+        stack<int> ss;
+        for (int i = 0; i < n; ++i) {
             if (s[i] == '(') {
-                ++cnt;
+                ss.push(i);
             } else if (s[i] == ')') {
-                if (cnt > 0) {
-                    --cnt;
+                if (!ss.empty()) {
+                    ss.pop();
                 } else {
-                    remove[i] = true;
+                    removed[i] = true;
                 }
             }
         }
-        cnt = 0;
-        for (int i = s.size() - 1; i >= 0; --i) {
-            if (s[i] == ')') {
-                ++cnt;
-            } else if (s[i] == '(') {
-                if (cnt > 0) {
-                    --cnt;
-                } else {
-                    remove[i] = true;
-                }
-            }
+        while(!ss.empty()) {
+            removed[ss.top()] = true;
+            ss.pop();
         }
-        for (int i = 0; i < s.size(); ++i) {
-            if (!remove[i]) {
-                res += s[i];
+        string res = "";
+        for (int i = 0; i < n; ++i) {
+            if (!removed[i]) {
+                res.push_back(s[i]);
             }
         }
         return res;
