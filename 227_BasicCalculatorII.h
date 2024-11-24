@@ -9,91 +9,52 @@
 
 class BasicCalculatorII : public solution {
 public:
-    string infix2Suffix(string s) {
-        stack<char> ss;
-        string res;
-        for (auto &c : s) {
-            if (c == '+' || c == '-') {
-                while(!ss.empty()) {
-                    res.push_back(' ');
-                    res.push_back(ss.top());
-                    ss.pop();
-                }
-                res.push_back(' ');
-                ss.push(c);
-            } else if (c == '*' || c == '/') {
-                while(!ss.empty() && (ss.top() == '*' || ss.top() == '/')) {
-                    res.push_back(' ');
-                    res.push_back(ss.top());
-                    ss.pop();
-                }
-                res.push_back(' ');
-                ss.push(c);
-            } else {
-                if (c != ' ') {
-                    // number
-                    res.push_back(c);
-                }
+    string removeSpace(string &s) {
+        string res = "";
+        for (char c : s) {
+            if (c != ' ') {
+                res.push_back(c);
             }
         }
-        while (!ss.empty()) {
-            res.push_back(' ');
-            res.push_back(ss.top());
-            ss.pop();
-        }
+        return res;
+    }
 
+    int getNumber(int &idx, string &s) {
+        int res = 0;
+        for (; idx < s.size(); ++idx) {
+            if (s[idx] >= '0' && s[idx] <= '9') {
+                res *= 10;
+                res += s[idx] - '0';
+            } else {
+                break;
+            }
+        }
         return res;
     }
 
     int calculate(string s) {
-        s = infix2Suffix(s);
-        cout << s << endl;
-        stack<int> ss;
-        int tmp1 = 0, tmp2 = 0;
-        bool toPush = false;
-        for (auto &c : s) {
-            if (c == '+') {
-                tmp1 = ss.top();
-                ss.pop();
-                tmp2 = ss.top();
-                ss.pop();
-                ss.push(tmp1 + tmp2);
-                tmp1 = 0;
-            } else if (c == '-') {
-                tmp1 = ss.top();
-                ss.pop();
-                tmp2 = ss.top();
-                ss.pop();
-                ss.push(tmp2 - tmp1);
-                tmp1 = 0;
-            } else if (c == '*') {
-                tmp1 = ss.top();
-                ss.pop();
-                tmp2 = ss.top();
-                ss.pop();
-                ss.push(tmp1 * tmp2);
-                tmp1 = 0;
-            } else if (c == '/') {
-                tmp1 = ss.top();
-                ss.pop();
-                tmp2 = ss.top();
-                ss.pop();
-                ss.push(tmp2 / tmp1);
-                tmp1 = 0;
-            } else if (c == ' ') {
-                if (toPush) {
-                    ss.push(tmp1);
-                    toPush = false;
-                    tmp1 = 0;
-                }
-            } else {
-                toPush = true;
-                tmp1 *= 10;
-                tmp1 += c - '0';
+        s = removeSpace(s);
+        int res = 0, idx = 0, n = s.size();
+        int last = getNumber(idx, s);
+        while (idx < n) {
+            if (s[idx] == '+') {
+                ++idx;
+                res += last;
+                last = getNumber(idx, s);
+            } else if (s[idx] == '-') {
+                ++idx;
+                res += last;
+                last = -1 * getNumber(idx, s);
+            } else if (s[idx] == '*') {
+                ++idx;
+                last *= getNumber(idx, s);
+            } else if (s[idx] == '/') {
+                ++idx;
+                last /= getNumber(idx, s);
             }
         }
-
-        return ss.empty() ? tmp1 : tmp1 + ss.top();
+        res += last;
+        return res;
     }
 
     void check() {
