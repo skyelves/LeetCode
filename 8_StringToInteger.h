@@ -10,44 +10,52 @@
 class StringToInteger : public solution {
 public:
     int myAtoi(string s) {
-        int64_t res = 0, start = -1, end = -1, sign = 1;
-
-        for (int i = 0; i < s.size(); ++i) {
-            if (s[i] == ' ') {
-                continue;
-            }
-            if (s[i] == '-' || s[i] == '+' || isDigit(s[i])) {
-                if (s[i] == '-' || s[i] == '+') {
-                    ++i;
-                }
-                start = i;
-                if (i > 0 && s[i - 1] == '-') {
-                    sign = -1;
-                }
-                for (int j = i; j < s.size(); ++j) {
-                    if (isDigit(s[j])) {
-                        res *= 10;
-                        res += (s[j] - '0') * sign;
-                        if (res > INT32_MAX) {
-                            return INT32_MAX;
-                        } else if (res < INT32_MIN) {
-                            return INT32_MIN;
-                        }
-                    } else {
-                        break;
-                    }
-                }
-            }
-            break;
-        }
-        if (start == -1) {
-            return 0;
+        int idx = 0;
+        trim(idx, s);
+        int sign = getSign(idx, s);
+        skipLeadingZeros(idx, s);
+        long long res = getNumber(idx, s) * sign;
+        if (res < INT32_MIN) {
+            return INT32_MIN;
+        } else if (res > INT32_MAX) {
+            return INT32_MAX;
         }
         return res;
     }
 
-    bool isDigit(char c) {
-        return c >= '0' && c <= '9';
+    // trim leading whitespace
+    void trim(int &idx, string &s) {
+        while(s[idx] == ' ') {
+            ++idx;
+        }
+    }
+
+    int getSign(int &idx, string &s) {
+        if (s[idx] == '-') {
+            ++idx;
+            return -1;
+        } else if (s[idx] == '+') {
+            ++idx;
+            return 1;
+        }
+        return 1;
+    }
+
+    void skipLeadingZeros(int &idx, string &s) {
+        while(s[idx] == '0') {
+            ++idx;
+        }
+    }
+
+    long long getNumber(int &idx, string &s) {
+        long long res = 0;
+        int n = s.size();
+        while(idx < n && s[idx] >= '0' && s[idx] <= '9' && res <= INT32_MAX) {
+            res *= 10;
+            res += s[idx] - '0';
+            ++idx;
+        }
+        return res;
     }
 };
 
